@@ -192,4 +192,10 @@ Model public_users {
 
   owner: 'tien.tt@holistics.io'
   table_name: '"public"."users"'
+  measure total_user {
+    label: "Total User"
+    type: "number"
+    definition: @sql count{{ id }};;
+    aggregation_type: "count"
+  }
 }
