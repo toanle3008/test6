@@ -1,0 +1,69 @@
+Model public_activation_codes {
+  type: 'table'
+  label: 'Activation Codes'
+  description: ''
+  data_source_name: 'development_2'
+  dimension code {
+    label: 'Code'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.code }};;
+  }
+  dimension activation_type {
+    label: 'Activation Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.activation_type }};;
+  }
+  dimension activatable_data {
+    label: 'Activatable Data'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.activatable_data }};;
+  }
+  dimension settings {
+    label: 'Settings'
+    type: 'unknown'
+    hidden: false
+    definition: @sql {{ #SOURCE.settings }};;
+  }
+  dimension expired_at {
+    label: 'Expired At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.expired_at }};;
+  }
+  dimension activatable_type {
+    label: 'Activatable Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.activatable_type }};;
+  }
+  dimension activatable_id {
+    label: 'Activatable Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.activatable_id }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension updated_at {
+    label: 'Updated At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.updated_at }};;
+  }
+  dimension tenant_id {
+    label: 'Tenant Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.tenant_id }};;
+  }
+
+  owner: 'duong.ht@holistics.io'
+  table_name: '"public"."activation_codes"'
+}
