@@ -57,12 +57,6 @@ Model public_activation_codes {
     hidden: false
     definition: @sql {{ #SOURCE.updated_at }};;
   }
-  dimension tenant_id {
-    label: 'Tenant Id'
-    type: 'number'
-    hidden: false
-    definition: @sql {{ #SOURCE.tenant_id }};;
-  }
 
   owner: 'duong.ht@holistics.io'
   table_name: '"public"."activation_codes"'
