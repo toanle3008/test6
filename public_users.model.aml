@@ -1,7 +1,7 @@
 Model public_users {
   type: 'table'
   label: 'Users'
-  description: ''
+  description: "Edit"
   data_source_name: 'development_1'
   dimension id {
     label: 'Id'
