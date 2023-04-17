@@ -1,6 +1,6 @@
 Model public_users {
   type: 'table'
-  label: 'Users'
+  label: "User 123 s"
   description: "Edit"
   data_source_name: 'development_1'
   dimension id {
