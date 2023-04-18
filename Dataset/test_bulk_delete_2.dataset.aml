@@ -4,7 +4,7 @@ import './public_activation_codes.model.aml' {
 
 Dataset test_bulk_delete_2 {
   label: 'Test Bulk Delete 2'
-  description: 'test'
+  description: 'testing'
   data_source_name: 'development_2'
   models: [
     model__public_activation_codes
