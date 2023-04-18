@@ -1,7 +1,7 @@
 Model public_tenants {
   type: 'table'
   label: 'Tenants'
-  description: ''
+  description: "description"
   data_source_name: 'development_1'
   dimension id {
     label: 'Id'
