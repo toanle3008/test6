@@ -4,7 +4,6 @@ import './public_activities.model.aml' {
 import './public_activation_codes.model.aml' {
   public_activation_codes as model__public_activation_codes
 }
-123
 Dataset test_bulk_delete {
   label: 'Test Bulk Delete'
   description: ''
