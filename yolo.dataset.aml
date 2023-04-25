@@ -1,0 +1,19 @@
+import './public_activation_codes.model.aml' {
+  public_activation_codes as model__public_activation_codes
+}
+import './public_activities.model.aml' {
+  public_activities as model__public_activities
+}
+
+Dataset yolo {
+  label: 'Yolo'
+  description: ''
+  data_source_name: 'development_2'
+  models: [
+    model__public_activation_codes,
+    model__public_activities
+  ]
+  relationships: [
+  ]
+  owner: 'duong.ht@holistics.io'
+}
