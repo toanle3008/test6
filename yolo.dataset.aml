@@ -13,7 +13,6 @@ Dataset yolo {
     model__public_activation_codes,
     model__public_activities
   ]
-  relationships: [
-  ]
+  relationships: [relationship(model__public_activation_codes.activation_type > model__public_activation_codes.activation_type, true)]
   owner: 'duong.ht@holistics.io'
 }
