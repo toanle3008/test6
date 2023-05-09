@@ -1,3 +1,6 @@
+import './/public_users.model.aml' {
+  public_users
+}
 import '../public_tenants.model.aml' {
   public_tenants as model__public_tenants
 }
@@ -8,6 +11,8 @@ Dataset test {
   data_source_name: 'development_1'
   models: [
     model__public_tenants
+    ,
+    public_users
   ]
   relationships: [
   ]
