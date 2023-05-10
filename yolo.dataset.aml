@@ -6,7 +6,7 @@ import './public_activities.model.aml' {
 }
 
 Dataset yolo {
-  label: 'Yolo'
+  label: 'Yolo ne'
   description: ''
   data_source_name: 'development_2'
   models: [
