@@ -61,3 +61,4 @@ Model public_activation_codes {
   owner: 'duong.ht@holistics.io'
   table_name: '"public"."activation_codes"'
 }
+

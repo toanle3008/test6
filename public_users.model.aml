@@ -199,3 +199,4 @@ Model public_users {
     aggregation_type: "count"
   }
 }
+

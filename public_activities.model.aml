@@ -97,3 +97,4 @@ Model public_activities {
   owner: 'duong.ht@holistics.io'
   table_name: "\"public\".\"activities\""
 }
+

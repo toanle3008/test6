@@ -49,3 +49,4 @@ Model public_tenants {
   owner: 'tien.tt@holistics.io'
   table_name: '"public"."tenants"'
 }
+
