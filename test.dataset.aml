@@ -9,5 +9,9 @@ Dataset test {
   relationships: [
   ]
   owner: 'duong.ly@holistics.io'
+
+  View {
+    model public_tenants
+  }
 }
 
