@@ -1,5 +1,5 @@
 Dataset test {
-  label: 'Test'
+  label: 'Test 1'
   description: ''
   data_source_name: 'development_1'
   models: [
