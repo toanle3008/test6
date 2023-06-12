@@ -1,0 +1,11 @@
+Dataset datasetview {
+  label: 'Datasetview'
+  description: ''
+  data_source_name: 'development_2'
+  models: [
+    public_activities,
+    public_activation_codes
+  ]
+  relationships: [relationship(public_activation_codes.activatable_id > public_activities.id, true)]
+  owner: 'thang.nv@holistics.io'
+}
