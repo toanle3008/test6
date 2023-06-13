@@ -17,4 +17,3 @@ Dataset test {
     model public_users
   }
 }
-
