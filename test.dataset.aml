@@ -12,7 +12,7 @@ Dataset test {
 
   View {
     model public_tenants {
-      field name
+      // field name
     }
     model public_users
   }
