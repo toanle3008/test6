@@ -16,7 +16,7 @@ Dataset test {
     }
     model public_users {
       field name
-      field email
+      // field email
     }
   }
 }
