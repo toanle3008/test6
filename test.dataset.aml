@@ -12,9 +12,12 @@ Dataset test {
 
   View {
     model public_tenants {
-      // field name
+      field name
     }
-    model public_users
+    model public_users {
+      field name
+      // field email
+      field role
+    }
   }
 }
-
