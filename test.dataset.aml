@@ -10,14 +10,14 @@ Dataset test {
   ]
   owner: 'duong.ly@holistics.io'
 
-  // View {
-  //   model public_tenants {
-  //     field name
-  //   }
-  //   model public_users {
-  //     field name
-  //     // field email
-  //     field role
-  //   }
-  // }
+  View {
+    model public_tenants {
+      field name
+    }
+    model public_users {
+      field name
+      // field email
+      field role
+    }
+  }
 }
