@@ -9,16 +9,16 @@ Dataset datasetview {
   relationships: [relationship(public_activation_codes.activatable_id > public_activities.id, true)]
   owner: 'thang.nv@holistics.io'
 
-  View {
-    model public_activities {
-      field id
-      field parameters
-    }
-    model public_annotations {
-      field user_id
-      field tenant_id
-    }
-  }
+  // View {
+  //   model public_activities {
+  //     field id
+  //     field parameters
+  //   }
+  //   model public_annotations {
+  //     field user_id
+  //     field tenant_id
+  //   }
+  // }
 }
 
 
