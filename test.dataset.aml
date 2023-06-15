@@ -14,9 +14,10 @@ Dataset test {
   View {
     
     model public_users {
-      field name
-      // field email
       field role
+
+      // field name
+      // field email
     }
 
     model public_tenants {
