@@ -7,6 +7,7 @@ Dataset test {
     public_users
   ]
   relationships: [
+    rel(public_tenants.id > public_users.id, true)
   ]
   owner: 'duong.ly@holistics.io'
 
