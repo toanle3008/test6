@@ -7,13 +7,20 @@ Dataset test {
     public_users
   ]
   relationships: [
+    rel(public_tenants.id > public_users.id, true)
   ]
   owner: 'duong.ly@holistics.io'
 
   View {
-    model public_tenants {
+    
+    model public_users {
       field name
+      // field email
+      field role
     }
-    // model public_users
+
+    model public_tenants {
+      // field name
+    }
   }
 }
