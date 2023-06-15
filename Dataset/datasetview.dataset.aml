@@ -16,7 +16,7 @@ Dataset datasetview {
     }
     model public_annotations {
       field user_id
-      field tenant_id
+      // field tenant_id
     }
   }
 }
