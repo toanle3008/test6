@@ -20,7 +20,7 @@ Dataset test {
     }
 
     model public_tenants {
-      field name
+      // field name
     }
   }
 }
