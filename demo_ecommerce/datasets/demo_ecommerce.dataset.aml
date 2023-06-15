@@ -1,5 +1,5 @@
 Dataset demo_ecommerce {
-  label: '[Demo] Ecommerce (Official)'
+  label: 'Ecommerce'
   description: "Official dataset for demoing E-commerce use cases test"
   owner: 'ha.pham+demo4@holistics.io'
   data_source_name: 'demodb'
