@@ -28,7 +28,7 @@ Model order_master {
   left join {{ #ecommerce_orders AS o }} on {{#oi.order_id}} = {{#o.id}}
   left join {{ #ecommerce_products AS p }} on {{#oi.product_id}} = {{#p.id}}
   ;;
-  
+
 
   dimension order_id {
     label: 'Order Id'
@@ -54,9 +54,8 @@ Model order_master {
     hidden: false
     definition: @sql {{ #SOURCE.order_created_at }};;
   }
-
   dimension date_html {
-    label: "Date Html"
+    label: "Date HTML"
     type: "text"
     definition: @sql CONCAT('<p style="background-color:tomato;">',{{ order_created_at }}, '</p>');;
   }
@@ -175,11 +174,11 @@ Model order_master {
     definition: @sql sum({{ #SOURCE.price }}) / count(distinct {{ #SOURCE.order_id }});;
     format: "[$$]#,###0.00"
   }
-  measure cancel_value_ratio {
-    label: "Cancel Value Ratio"
+  measure cancelled_value_ratio {
+    label: "Cancelled Value Ratio"
     type: "number"
-    definition: @sql            
-      sum(case when {{ #SOURCE.status }} = 'cancelled' then {{ #SOURCE.price }} else 0 end)::float / sum({{ #SOURCE.price }})::float;;
+    definition: @sql sum(case when {{ #SOURCE.status }} = 'cancelled' then {{ #SOURCE.price }} else 0 end)::float / sum({{ #SOURCE.price }})::float;;
+    aggregation_type: "custom"
     format: "#,###0.00"
   }
   measure cancelled_order_ratio {
