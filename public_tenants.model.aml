@@ -33,12 +33,12 @@ Model public_tenants {
     hidden: false
     definition: @sql {{ #SOURCE.settings }};;
   }
-  // dimension uname {
-  //   label: 'Uname'
-  //   type: 'text'
-  //   hidden: false
-  //   definition: @sql {{ #SOURCE.uname }};;
-  // }
+  dimension uname {
+    label: 'Uname'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.uname }};;
+  }
   dimension duplicated {
     label: 'Duplicated'
     type: 'truefalse'
