@@ -30,5 +30,8 @@ Dataset demo_ecommerce {
     relationship(order_master_dim_dates, false)
   ]
 
-  View { model order_master { field order_idsf} }
+  View {
+    model order_master
+    model ecommerce_orders
+  }
 }
