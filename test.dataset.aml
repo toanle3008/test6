@@ -17,11 +17,13 @@ Dataset test {
       field role
 
       // field name
-      // field email
+      field email
+    
+      field total_user
     }
 
     model public_tenants {
-      // field name
+      field name
     }
   }
 }
