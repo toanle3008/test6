@@ -32,6 +32,5 @@ Dataset demo_ecommerce {
 
   View {
     model order_master
-    model ecommerce_orders
   }
 }
