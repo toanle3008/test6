@@ -17,7 +17,7 @@ Dataset test {
       field role
 
       // field name
-      // field email
+      field email
     }
 
     model public_tenants {
