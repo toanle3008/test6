@@ -18,6 +18,8 @@ Dataset test {
 
       // field name
       field email
+    
+      field total_user
     }
 
     model public_tenants {
