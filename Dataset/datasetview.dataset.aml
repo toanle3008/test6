@@ -13,9 +13,14 @@ Dataset datasetview {
     model public_activities {
       field id
       field parameters
+      group tracking {
+        field trackable_id
+      }
     }
-    model public_activation_codes {
-      field activatable_id
+    group activation {
+      model public_activation_codes {
+        field activatable_id
+      }
     }
   }
 }
