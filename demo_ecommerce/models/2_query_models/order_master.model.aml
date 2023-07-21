@@ -54,6 +54,13 @@ Model order_master {
     hidden: false
     definition: @sql {{ #SOURCE.order_created_at }};;
   }
+  dimension order_created_at_date {
+    label: 'Order Created At - Date'
+    type: 'date'
+    hidden: false
+    format: "dd/LL/yyyy"
+    definition: @sql {{ #SOURCE.order_created_at }};;
+  }
   dimension date_html {
     label: "Date HTML"
     type: "text"
