@@ -30,7 +30,7 @@ Dataset demo_ecommerce {
     relationship(order_master_dim_dates, false)
   ]
 
-  View {
+  view {
     model order_master
   }
 }
