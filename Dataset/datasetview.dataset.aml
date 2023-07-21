@@ -9,6 +9,7 @@ Dataset datasetview {
   relationships: [relationship(public_activation_codes.activatable_id > public_activities.id, true)]
   owner: 'thang.nv@holistics.io'
 
+  // deploy production
   view {
     model public_activities {
       field id
@@ -17,6 +18,7 @@ Dataset datasetview {
         field trackable_id
       }
     }
+
     group activation {
       model public_activation_codes {
         field activatable_id
