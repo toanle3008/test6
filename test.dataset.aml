@@ -11,19 +11,20 @@ Dataset test {
   ]
   owner: 'duong.ly@holistics.io'
 
-  View {
-    
+  view {
     model public_users {
-      field role
-
-      // field name
-      field email
-    
       field total_user
+      group user_info_group {
+        field role
+        field email
+      }
     }
 
     model public_tenants {
       field name
     }
+    
+
+
   }
 }

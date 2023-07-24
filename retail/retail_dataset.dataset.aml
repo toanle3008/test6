@@ -18,7 +18,7 @@ Dataset retail_dataset {
     , relationship(retail_promotion.upc > retail_products.upc, true)]
   owner: 'thinh.nt@holistics.io'
 
-  View {
+  view {
     model retail_transactions {
       field basket
       // field geography
