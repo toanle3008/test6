@@ -30,7 +30,43 @@ Dataset demo_ecommerce {
     relationship(order_master_dim_dates, false)
   ]
 
-  View {
-    model order_master
+  view {
+    // model order_master {
+    //   field order_id
+    //   field product_id
+    //   field user_id
+    //   field order_count
+    //   field aov
+    //   field cancelled_value_ratio
+    //   field cancelled_value
+    // }
+    model ecommerce_orders {
+      group Dims {
+        field id
+        field status
+        // group CreateTime {
+        //   field created_at
+        //   field created_date
+        // }
+        field user_id
+        field discount
+        field delivery_attempts
+      }
+
+      group measures {
+        field total_orders_count
+        field delivered_orders_count
+        field cancelled_orders_count
+        field refunded_orders_count
+      }
+    },
+  // model ecommerce_users,
+  // model ecommerce_products,
+  // model ecommerce_merchants,
+  // model ecommerce_cities,
+  // model ecommerce_countries,
+  // model map_categories,
+  // model user_cohort_retention,
+  // model dim_dates
   }
 }
