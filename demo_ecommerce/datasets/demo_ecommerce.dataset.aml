@@ -41,8 +41,8 @@ Dataset demo_ecommerce {
     //   field cancelled_value
     // }
     model ecommerce_orders {
+      field id
       group Dims {
-        field id
         field status
         // group CreateTime {
         //   field created_at
@@ -61,7 +61,7 @@ Dataset demo_ecommerce {
       }
     },
   // model ecommerce_users,
-  // model ecommerce_products,
+  model ecommerce_products,
   // model ecommerce_merchants,
   // model ecommerce_cities,
   // model ecommerce_countries,
