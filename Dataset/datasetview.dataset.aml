@@ -21,7 +21,9 @@ Dataset datasetview {
 
     group activation {
       model public_activation_codes {
-        field activatable_id
+        group activity {
+          field activatable_id
+        }
       }
     }
   }
