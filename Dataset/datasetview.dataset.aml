@@ -13,7 +13,7 @@ Dataset datasetview {
   view {
     model public_activities {
       field id
-      field parameters
+      // field parameters
       group tracking {
         field trackable_id
       }
