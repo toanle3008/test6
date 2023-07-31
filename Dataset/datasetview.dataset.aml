@@ -9,19 +9,20 @@ Dataset datasetview {
   relationships: [relationship(public_activation_codes.activatable_id > public_activities.id, true)]
   owner: 'thang.nv@holistics.io'
 
-  // deploy production
+
+  // Group name auto normalize (group_name => Group Name)
   view {
     model public_activities {
       field id
       // field parameters
-      group tracking {
+      group tracking_information {
         field trackable_id
       }
     }
 
     group activation {
       model public_activation_codes {
-        group activity {
+        group activity_information {
           field activatable_id
         }
       }
