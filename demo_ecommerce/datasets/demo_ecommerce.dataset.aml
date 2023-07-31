@@ -44,10 +44,8 @@ Dataset demo_ecommerce {
       field id
       group Dims {
         field status
-        // group CreateTime {
-        //   field created_at
-        //   field created_date
-        // }
+        field created_at
+        field created_date
         field user_id
         field discount
         field delivery_attempts
