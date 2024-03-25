@@ -5,7 +5,7 @@ Dashboard new {
     label: 'View 1'
     height: 1730
     block v1 {
-      position: pos(20, 20, 1160, 370)
+      position: pos(20, 90, 1160, 300)
     }
     block v2 {
       position: pos(20, 410, 1160, 300)
@@ -15,6 +15,9 @@ Dashboard new {
     }
     block v4 {
       position: pos(600, 730, 570, 390)
+    }
+    block t1 {
+      position: pos(20, 20, 280, 60)
     }
   }
   block v1: VizBlock {
@@ -192,6 +195,9 @@ Dashboard new {
         show_row_number: true
       }
     }
+  }
+  block t1: TextBlock {
+    content: @md # My Dashboard;;
   }
 
 }
