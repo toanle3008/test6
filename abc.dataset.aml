@@ -1,0 +1,18 @@
+Dataset abc {
+  label: 'Abc'
+  description: ''
+  data_source_name: 'demodb'
+  models: [
+    ecommerce_merchants,
+    ecommerce_orders,
+    ecommerce_cities,
+    ecommerce_order_items,
+    ecommerce_users,
+    ecommerce_countries,
+    ecommerce_categories,
+    ecommerce_products
+  ]
+  relationships: [
+  ]
+  owner: 'thinh.nt@holistics.io'
+}

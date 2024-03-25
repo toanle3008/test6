@@ -30,41 +30,81 @@ Dataset demo_ecommerce {
     relationship(order_master_dim_dates, false)
   ]
 
-  view {
-    // model order_master {
-    //   field order_id
-    //   field product_id
-    //   field user_id
-    //   field order_count
-    //   field aov
-    //   field cancelled_value_ratio
-    //   field cancelled_value
-    // }
-    model ecommerce_orders {
-      field id
-      group Dims {
-        field status
-        field created_at
-        field created_date
-        field user_id
-        field discount
-        field delivery_attempts
-      }
+  // view {}
 
-      group measures {
-        field total_orders_count
-        field delivered_orders_count
-        field cancelled_orders_count
-        field refunded_orders_count
-      }
-    },
-  // model ecommerce_users,
-  model ecommerce_products,
-  // model ecommerce_merchants,
-  // model ecommerce_cities,
-  // model ecommerce_countries,
-  // model map_categories,
-  // model user_cohort_retention,
-  // model dim_dates
+  // view {
+  //   // model order_master {
+  //   //   field order_id
+  //   //   field product_id
+  //   //   field user_id
+  //   //   field order_count
+  //   //   field aov
+  //   //   field cancelled_value_ratio
+  //   //   field cancelled_value
+  //   // }
+  //   model ecommerce_orders {
+  //     field id
+  //     group some_dim {
+  //       field created_date
+  //       field user_id
+  //     }
+  //     group some_dim {
+  //       field discount
+  //       field delivery_attempts
+  //     }
+
+  //     group some_dim {
+  //       field total_orders_count
+  //       field delivered_orders_count
+  //       field cancelled_orders_count
+  //       field refunded_orders_count
+  //     }
+  //   },
+  // // model ecommerce_users,
+  // model ecommerce_products,
+  // // model ecommerce_merchants,
+  // // model ecommerce_cities,
+  // // model ecommerce_countries,
+  // // model map_categories,
+  // // model user_cohort_retention,
+  // // model dim_dates
+  // }
+
+
+  view {
+		model ecommerce_products { } // DISPLAY ALL FIELDS FROM MODEL "Products"
+
+		model ecommerce_users {
+			// DISPLAY SELECTED FIELDS FROM MODEL "Users"
+			// field id
+      
+      // CREATE GROUP "Customer Name" CONTAINING FIELDS WITHIN MODEL "Users" 
+      group user_name {
+				field first_name
+				field last_name
+				field full_name
+			}
+			// field email
+			// field address
+		}
+
+    // CREATE GROUP "Order Master" CONTAINING TWO MODELS "Orders" & "Dim dates"
+		group order_master {
+			model ecommerce_orders {
+				// field order_value
+	      // field id
+	      // field order_status
+				// field order_discount
+	    }
+
+	    model dim_dates {
+	      // field year
+	      // field month
+	      // field day
+	      // field week
+	      // field quarter
+	    }
+		}
   }
+
 }
