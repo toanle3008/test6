@@ -72,7 +72,7 @@ Choose from three editing modes: **Visual Editor** for beginner-friendly customi
   }
   view: CanvasLayout {
     label: 'View 1'
-    height: 930
+    height: 1130
     block text_block {
       position: pos(40, 30, 1120, 420)
     }
@@ -80,7 +80,7 @@ Choose from three editing modes: **Visual Editor** for beginner-friendly customi
       position: pos(40, 460, 400, 80)
     }
     block v1 {
-      position: pos(50, 550, 420, 350)
+      position: pos(40, 530, 420, 350)
     }
   }
 

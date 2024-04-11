@@ -22,7 +22,7 @@ Dashboard new {
   }
   block v1: VizBlock {
     label: 'Sum of Delivery Attempts by Month Created At and Status'
-    viz: ColumnChart {
+    viz: CombinationChart {
       dataset: demo_ecommerce
       x_axis: VizFieldFull {
         ref: ref('ecommerce_orders', 'created_at')
@@ -39,12 +39,27 @@ Dashboard new {
       }
       y_axis {
         series {
+          mark_type: 'area'
           field {
-            ref: ref('ecommerce_orders', 'delivery_attempts')
+            ref: ref('order_master', 'delivery_attempts')
             aggregation: 'sum'
             format {
               type: 'number'
               pattern: 'inherited'
+            }
+          }
+          settings {
+            point {
+              value: 'cancelled'
+              line_interpolation: 'smooth'
+            }
+            point {
+              value: 'delivered'
+              line_interpolation: 'smooth'
+            }
+            point {
+              value: 'refunded'
+              line_interpolation: 'smooth'
             }
           }
         }
