@@ -1,5 +1,4 @@
 Dataset demo_ecommerce {
-  __engine__: 'aql'
   label: 'Ecommerce'
   description: "Official dataset for demoing E-commerce use cases test"
   owner: 'ha.pham+demo4@holistics.io'
