@@ -122,40 +122,6 @@ Dashboard new {
         show_row_number: true
         column_width {
           type: 'auto'
-          manual_widths: [
-            ColumnWidth {
-              key: '__row-number__'
-              width: 50
-            },
-            ColumnWidth {
-              key: 'fields[0]'
-              width: 84
-            },
-            ColumnWidth {
-              key: 'fields[1]'
-              width: 92
-            },
-            ColumnWidth {
-              key: 'fields[2]'
-              width: 133
-            },
-            ColumnWidth {
-              key: 'fields[3]'
-              width: 89
-            },
-            ColumnWidth {
-              key: 'fields[4]'
-              width: 82
-            },
-            ColumnWidth {
-              key: 'fields[5]'
-              width: 81
-            },
-            ColumnWidth {
-              key: 'fields[6]'
-              width: 157
-            }
-          ]
         }
       }
     }
