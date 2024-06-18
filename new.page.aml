@@ -1,0 +1,255 @@
+Dashboard new {
+  title: 'New'
+  description: ''''''
+  view: CanvasLayout {
+    label: 'View 1'
+    height: 1730
+    block v1 {
+      position: pos(20, 90, 1160, 300)
+    }
+    block v2 {
+      position: pos(20, 410, 1160, 300)
+    }
+    block v3 {
+      position: pos(20, 730, 560, 370)
+    }
+    block v4 {
+      position: pos(600, 730, 570, 390)
+    }
+    block t1 {
+      position: pos(20, 20, 280, 60)
+    }
+  }
+  block v1: VizBlock {
+    label: 'Sum of Delivery Attempts by Month Created At and Status'
+    viz: CombinationChart {
+      dataset: demo_ecommerce
+      x_axis: VizFieldFull {
+        ref: ref('ecommerce_orders', 'created_at')
+        transformation: 'datetrunc month'
+        format {
+          type: 'date'
+        }
+      }
+      legend: VizFieldFull {
+        ref: ref('ecommerce_orders', 'status')
+        format {
+          type: 'text'
+        }
+      }
+      y_axis {
+        series {
+          mark_type: 'area'
+          field {
+            ref: ref('order_master', 'delivery_attempts')
+            aggregation: 'sum'
+            format {
+              type: 'number'
+              pattern: 'inherited'
+            }
+          }
+          settings {
+            point {
+              value: 'cancelled'
+              line_interpolation: 'smooth'
+            }
+            point {
+              value: 'delivered'
+              line_interpolation: 'smooth'
+            }
+            point {
+              value: 'refunded'
+              line_interpolation: 'smooth'
+            }
+          }
+        }
+      }
+    }
+  }
+  block v2: VizBlock {
+    label: 'Table'
+    viz: DataTable {
+      dataset: demo_ecommerce
+      fields: [
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'status')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'created_at')
+          format {
+            type: 'datetime'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'user_id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'discount')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'delivery_attempts')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'created_date')
+          format {
+            type: 'date'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        column_width {
+          type: 'manual'
+          manual_widths: [
+            ColumnWidth {
+              key: '__row-number__'
+              width: 50
+            },
+            ColumnWidth {
+              key: 'fields[0]'
+              width: 84
+            },
+            ColumnWidth {
+              key: 'fields[1]'
+              width: 92
+            },
+            ColumnWidth {
+              key: 'fields[2]'
+              width: 133
+            },
+            ColumnWidth {
+              key: 'fields[3]'
+              width: 89
+            },
+            ColumnWidth {
+              key: 'fields[4]'
+              width: 82
+            },
+            ColumnWidth {
+              key: 'fields[5]'
+              width: 81
+            },
+            ColumnWidth {
+              key: 'fields[6]'
+              width: 157
+            }
+          ]
+        }
+      }
+    }
+  }
+  block v3: VizBlock {
+    label: 'Sum of Delivery Attempts by Month Created At and Status (dup)'
+    viz: ColumnChart {
+      dataset: demo_ecommerce
+      x_axis: VizFieldFull {
+        ref: ref('ecommerce_orders', 'created_at')
+        transformation: 'datetrunc year'
+        format {
+          type: 'date'
+        }
+      }
+      legend: VizFieldFull {
+        ref: ref('ecommerce_orders', 'status')
+        format {
+          type: 'text'
+        }
+      }
+      y_axis {
+        series {
+          field {
+            ref: ref('ecommerce_orders', 'delivery_attempts')
+            aggregation: 'sum'
+            format {
+              type: 'number'
+              pattern: 'inherited'
+            }
+          }
+        }
+      }
+    }
+  }
+  block v4: VizBlock {
+    label: 'Table (dup)'
+    viz: DataTable {
+      dataset: demo_ecommerce
+      fields: [
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'status')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'created_at')
+          format {
+            type: 'datetime'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'user_id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'discount')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'delivery_attempts')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_orders', 'created_date')
+          format {
+            type: 'date'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+      }
+    }
+  }
+  block t1: TextBlock {
+    content: @md # My Dashboard;;
+  }
+
+}
