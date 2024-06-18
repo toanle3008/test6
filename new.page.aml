@@ -121,7 +121,7 @@ Dashboard new {
       settings {
         show_row_number: true
         column_width {
-          type: 'manual'
+          type: 'auto'
           manual_widths: [
             ColumnWidth {
               key: '__row-number__'
