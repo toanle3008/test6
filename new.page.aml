@@ -120,8 +120,6 @@ Dashboard new {
       ]
       settings {
         show_row_number: true
-        column_width {
-          type: 'auto'
         }
       }
     }
