@@ -1,20 +1,30 @@
-import './/public_users.model.aml' {
-  public_users
-}
-import '../public_tenants.model.aml' {
-  public_tenants as model__public_tenants
-}
-
 Dataset test {
-  label: 'Test'
+  label: 'Test 1'
   description: ''
   data_source_name: 'development_1'
   models: [
-    model__public_tenants
-    ,
+    public_tenants,
     public_users
   ]
   relationships: [
+    rel(public_tenants.id > public_users.id, true)
   ]
   owner: 'duong.ly@holistics.io'
+
+  view {
+    model public_users {
+      field total_user
+      group user_info_group {
+        field role
+        field email
+      }
+    }
+
+    model public_tenants {
+      field name
+    }
+    
+
+
+  }
 }

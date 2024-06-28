@@ -1,7 +1,7 @@
-Model public_users {
+Model public_users_1 {
   type: 'table'
-  label: "User 123 s"
-  description: "Edit"
+  label: 'Users'
+  description: ''
   data_source_name: 'development_1'
   dimension id {
     label: 'Id'
@@ -189,19 +189,13 @@ Model public_users {
     hidden: false
     definition: @sql {{ #SOURCE.dev_mode_enabled }};;
   }
-  dimension test {
-    label: "Test"
-    type: "text"
-    definition: @sql ROUND({{ sign_in_count }}, 1);;
+  dimension job_title {
+    label: 'Job Title'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.job_title }};;
   }
 
-  owner: 'tien.tt@holistics.io'
+  owner: 'thang.nv@holistics.io'
   table_name: '"public"."users"'
-  measure total_user {
-    label: "Total User"
-    type: "number"
-    definition: @sql count{{ id }};;
-    aggregation_type: "count"
-  }
 }
-

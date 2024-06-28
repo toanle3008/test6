@@ -1,18 +1,12 @@
-import './public_activities.model.aml' {
-  public_activities as model__public_activities
-}
-import './public_activation_codes.model.aml' {
-  public_activation_codes as model__public_activation_codes
-}
 Dataset test_bulk_delete {
   label: 'Test Bulk Delete'
   description: ''
   data_source_name: 'development_2'
   models: [
-    model__public_activities,
-    model__public_activation_codes
+    public_activities,
+    public_activation_codes
   ]
-  relationships: [
-  ]
+  relationships: []
   owner: 'duong.ly@holistics.io'
 }
+

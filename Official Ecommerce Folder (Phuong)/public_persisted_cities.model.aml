@@ -1,0 +1,27 @@
+Model public_persisted_cities {
+  type: 'table'
+  label: 'Persisted Cities'
+  description: ''
+  data_source_name: 'development_2'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension name {
+    label: 'Name'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension country_code {
+    label: 'Country Code'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.country_code }};;
+  }
+
+  owner: 'phuong.nl@holistics.io'
+  table_name: '"public"."persisted_cities"'
+}

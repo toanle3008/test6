@@ -1,8 +1,8 @@
-Model public_activities {
+Model public_activities_1 {
   type: 'table'
-  label: "Activities"
+  label: 'Activities'
   description: ''
-  data_source_name: "development_2"
+  data_source_name: 'development_1'
   dimension id {
     label: 'Id'
     type: 'number'
@@ -94,7 +94,6 @@ Model public_activities {
     definition: @sql {{ #SOURCE.impersonator_id }};;
   }
 
-  owner: 'duong.ht@holistics.io'
-  table_name: "\"public\".\"activities\""
+  owner: 'thang.nv@holistics.io'
+  table_name: '"public"."activities"'
 }
-

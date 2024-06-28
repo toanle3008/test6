@@ -1,0 +1,33 @@
+Model public_persisted_order_item {
+  type: 'table'
+  label: 'Persisted Order Item'
+  description: ''
+  data_source_name: 'development_2'
+  dimension order_id {
+    label: 'Order Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.order_id }};;
+  }
+  dimension product_id {
+    label: 'Product Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.product_id }};;
+  }
+  dimension quantity {
+    label: 'Quantity'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.quantity }};;
+  }
+
+  owner: 'phuong.nl@holistics.io'
+  table_name: '"public"."persisted_order_item"'
+  measure sum_of_order_quantity {
+    label: "Sum Of Order Quantity"
+    type: "number"
+    definition: @sql sum({{ quantity }});;
+    aggregation_type: "custom"
+  }
+}

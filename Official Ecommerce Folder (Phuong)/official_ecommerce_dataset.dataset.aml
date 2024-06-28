@@ -1,0 +1,31 @@
+Dataset official_ecommerce_dataset {
+  label: 'Official Ecommerce Dataset'
+  description: ''
+  data_source_name: 'development_2'
+  models: [
+    public_persisted_order_item,
+    public_persisted_categories,
+    public_persisted_cities,
+    public_persisted_merchants,
+    public_persisted_countries,
+    public_persisted_orders,
+    public_persisted_users,
+    public_persisted_products
+  ]
+  relationships: [
+    relationship(public_persisted_order_item.order_id > public_persisted_orders.id, true)
+    ,
+    relationship(public_persisted_orders.user_id > public_persisted_users.id, true)
+    ,
+    relationship(public_persisted_order_item.product_id > public_persisted_products.id, true)
+    ,
+    relationship(public_persisted_products.category_id > public_persisted_categories.id, true)
+    ,
+    relationship(public_persisted_products.merchant_id > public_persisted_merchants.id, true)
+    ,
+    relationship(public_persisted_users.city_id > public_persisted_cities.id, true)
+    ,
+    relationship(public_persisted_cities.country_code > public_persisted_countries.code, true)
+  ]
+  owner: 'phuong.nl@holistics.io'
+}

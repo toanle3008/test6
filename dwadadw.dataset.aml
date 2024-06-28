@@ -1,0 +1,14 @@
+Dataset dwadadw {
+  label: 'Dwadadw'
+  description: ''
+  data_source_name: 'demodb'
+  models: [
+    retail_promotion,
+    retail_products,
+    retail_stores,
+    retail_transaction_items,
+    retail_transactions
+  ]
+  relationships: [
+  ]
+}
