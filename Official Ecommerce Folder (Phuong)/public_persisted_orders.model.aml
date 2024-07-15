@@ -15,6 +15,18 @@ Model public_persisted_orders {
     hidden: false
     definition: @sql {{ #SOURCE.created_at }};;
   }
+
+  dimension created_quarter {
+    label: 'Created Quarter'
+    type: 'text'
+    definition: @sql 'Q' || EXTRACT(QUARTER FROM {{ created_at }});;
+  }
+  dimension created_yq {
+    label: 'Created Year Quarter'
+    type: 'datetime'
+    definition: @sql DATE_TRUNC('quarter', {{ created_at }});;
+  }
+
   dimension status {
     label: 'Status'
     type: 'text'
