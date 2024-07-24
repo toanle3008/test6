@@ -1,6 +1,6 @@
 Model public_persisted_merchants {
   type: 'table'
-  label: 'Persisted Merchants'
+  label: 'Merchants'
   description: ''
   data_source_name: 'development_2'
   dimension id {

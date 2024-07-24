@@ -1,6 +1,6 @@
 Model public_persisted_countries {
   type: 'table'
-  label: 'Persisted Countries'
+  label: 'Countries'
   description: ''
   data_source_name: 'development_2'
   dimension code {

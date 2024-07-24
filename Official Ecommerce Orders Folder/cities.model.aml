@@ -1,6 +1,6 @@
 Model public_persisted_cities {
   type: 'table'
-  label: 'Persisted Cities'
+  label: 'Cities'
   description: ''
   data_source_name: 'development_2'
   dimension id {
