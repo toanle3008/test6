@@ -1,0 +1,9 @@
+Dashboard official_ecommerce_dashboard {
+  title: 'Official Ecommerce Dashboard'
+  description: ''''''
+  view: CanvasLayout {
+    label: 'View 1'
+    height: 800
+  }
+
+}

@@ -10,9 +10,8 @@ Model public_persisted_cities {
     definition: @sql {{ #SOURCE.id }};;
   }
   dimension name {
-    label: 'Name'
+    label: 'City'
     type: 'text'
-    hidden: false
     definition: @sql {{ #SOURCE.name }};;
   }
   dimension country_code {

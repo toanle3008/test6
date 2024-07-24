@@ -10,9 +10,8 @@ Model public_persisted_categories {
     definition: @sql {{ #SOURCE.id }};;
   }
   dimension name {
-    label: 'Name'
+    label: 'Category'
     type: 'text'
-    hidden: false
     definition: @sql {{ #SOURCE.name }};;
   }
   dimension parent_id {

@@ -10,9 +10,8 @@ Model public_persisted_products {
     definition: @sql {{ #SOURCE.id }};;
   }
   dimension name {
-    label: 'Name'
+    label: 'Product'
     type: 'text'
-    hidden: false
     definition: @sql {{ #SOURCE.name }};;
   }
   dimension price {

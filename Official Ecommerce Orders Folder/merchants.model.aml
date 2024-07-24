@@ -10,9 +10,8 @@ Model public_persisted_merchants {
     definition: @sql {{ #SOURCE.id }};;
   }
   dimension name {
-    label: 'Name'
+    label: 'Merchant'
     type: 'text'
-    hidden: false
     definition: @sql {{ #SOURCE.name }};;
   }
   dimension created_at {

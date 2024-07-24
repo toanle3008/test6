@@ -10,9 +10,8 @@ Model public_persisted_countries {
     definition: @sql {{ #SOURCE.code }};;
   }
   dimension name {
-    label: 'Name'
+    label: 'Country'
     type: 'text'
-    hidden: false
     definition: @sql {{ #SOURCE.name }};;
   }
   dimension continent_name {
