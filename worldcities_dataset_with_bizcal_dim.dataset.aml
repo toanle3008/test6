@@ -1,0 +1,11 @@
+Dataset worldcities_dataset_with_bizcal_dim {
+  label: 'Worldcities Dataset With Bizcal Dim'
+  description: ''
+  data_source_name: 'demodb'
+  models: [
+    persisted_models_persisted_worldcities_csv
+  ]
+  relationships: [
+  ]
+  owner: 'phuong.nl@holistics.io'
+}
