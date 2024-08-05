@@ -121,7 +121,6 @@ Dashboard new {
       settings {
         show_row_number: true
         column_width {
-          type: 'manual'
           manual_widths: [
             ColumnWidth {
               key: '__row-number__'
@@ -129,7 +128,7 @@ Dashboard new {
             },
             ColumnWidth {
               key: 'fields[0]'
-              width: 84
+              width: 63
             },
             ColumnWidth {
               key: 'fields[1]'
@@ -137,7 +136,7 @@ Dashboard new {
             },
             ColumnWidth {
               key: 'fields[2]'
-              width: 133
+              width: 155
             },
             ColumnWidth {
               key: 'fields[3]'
@@ -145,15 +144,15 @@ Dashboard new {
             },
             ColumnWidth {
               key: 'fields[4]'
-              width: 82
+              width: 100
             },
             ColumnWidth {
               key: 'fields[5]'
-              width: 81
+              width: 153
             },
             ColumnWidth {
               key: 'fields[6]'
-              width: 157
+              width: 250
             }
           ]
         }
