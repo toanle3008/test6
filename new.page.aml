@@ -1,25 +1,5 @@
 Dashboard new {
   title: 'New'
-  description: ''''''
-  view: CanvasLayout {
-    label: 'View 1'
-    height: 1730
-    block v1 {
-      position: pos(20, 90, 1160, 300)
-    }
-    block v2 {
-      position: pos(20, 410, 1160, 300)
-    }
-    block v3 {
-      position: pos(20, 730, 560, 370)
-    }
-    block v4 {
-      position: pos(600, 730, 570, 390)
-    }
-    block t1 {
-      position: pos(20, 20, 280, 60)
-    }
-  }
   block v1: VizBlock {
     label: 'Sum of Delivery Attempts by Month Created At and Status'
     viz: CombinationChart {
@@ -151,7 +131,7 @@ Dashboard new {
               width: 153
             },
             ColumnWidth {
-              key: 'fields[6]'
+              key: 'fields[62]'
               width: 250
             }
           ]
@@ -250,5 +230,23 @@ Dashboard new {
   block t1: TextBlock {
     content: @md # My Dashboard;;
   }
-
+  view: CanvasLayout {
+    label: 'View 1'
+    height: 1730
+    block v1 {
+      position: pos(20, 90, 1160, 300)
+    }
+    block v2 {
+      position: pos(20, 410, 1160, 300)
+    }
+    block v3 {
+      position: pos(20, 730, 560, 370)
+    }
+    block v4 {
+      position: pos(600, 730, 570, 390)
+    }
+    block t1 {
+      position: pos(20, 20, 280, 60)
+    }
+  }
 }
