@@ -1,0 +1,65 @@
+Dashboard duc_test_pot {
+  title: 'Duc Test Pot'
+  description: ''''''
+  block v1: VizBlock {
+    label: 'Test'
+    viz: PivotTable {
+      dataset: official_ecommerce_dataset
+      rows: [
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'created_at')
+          transformation: 'datetrunc month'
+          format {
+            type: 'date'
+          }
+        }
+      ]
+      columns: [
+        VizFieldFull {
+          ref: ref('public_persisted_users', 'gender')
+          format {
+            type: 'text'
+          }
+        }
+      ]
+      values: [
+        VizFieldFull {
+          ref: ref('public_persisted_order_item', 'order_id')
+          aggregation: 'count'
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          label: 'PoT Count of Order Id'
+          ref: ref('public_persisted_order_item', 'order_id')
+          aggregation: 'count'
+          format {
+            type: 'number'
+            pattern: '#,###%'
+          }
+          analytic: PercentOfTotalField {
+            of_all: 'row'
+          }
+        }
+      ]
+      settings {
+        pop {
+          field: ref('public_persisted_orders', 'created_at')
+          duration: 1
+          granularity: 'year'
+        }
+      }
+    }
+  }
+  view: CanvasLayout {
+    label: 'View 1'
+    width: 1610
+    height: 1080
+    block v1 {
+      position: pos(0, 20, 1610, 820)
+    }
+  }
+
+}

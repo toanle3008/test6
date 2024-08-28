@@ -189,6 +189,11 @@ Model public_users {
     hidden: false
     definition: @sql {{ #SOURCE.dev_mode_enabled }};;
   }
+  dimension test {
+    label: "Test"
+    type: "text"
+    definition: @sql ROUND({{ sign_in_count }}, 1);;
+  }
 
   owner: 'tien.tt@holistics.io'
   table_name: '"public"."users"'

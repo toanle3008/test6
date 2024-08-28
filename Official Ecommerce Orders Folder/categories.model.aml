@@ -1,0 +1,26 @@
+Model public_persisted_categories {
+  type: 'table'
+  label: 'Categories'
+  description: ''
+  data_source_name: 'development_2'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension name {
+    label: 'Category'
+    type: 'text'
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension parent_id {
+    label: 'Parent Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.parent_id }};;
+  }
+
+  owner: 'phuong.nl@holistics.io'
+  table_name: '"public"."persisted_categories"'
+}
