@@ -11,12 +11,14 @@ Dashboard unnamed_2 {
             type: 'number'
             pattern: 'inherited'
           }
+          uname: 'categories_full_category_id'
         },
         VizFieldFull {
           ref: ref('categories_full', 'parent_category')
           format {
             type: 'text'
           }
+          uname: 'categories_full_parent_category'
         },
         VizFieldFull {
           ref: ref('categories_full', 'category')
@@ -27,222 +29,18 @@ Dashboard unnamed_2 {
       ]
       settings {
         show_row_number: true
-      }
-    }
-  }
-  block v2: VizBlock {
-    label: 'ád'
-    viz: DataTable {
-      dataset: new_test
-      fields: [
-        VizFieldFull {
-          ref: ref('categories_full', 'category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'parent_category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'category_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
+        column_width {
+          manual_widths: [
+            ColumnWidth {
+              key: 'categories_full_category_id'
+              width: 101
+            },
+            ColumnWidth {
+              key: 'categories_full_parent_category'
+              width: 281
+            }
+          ]
         }
-      ]
-      settings {
-        show_row_number: true
-      }
-    }
-  }
-  block v3: VizBlock {
-    label: 'ád'
-    viz: DataTable {
-      dataset: new_test
-      fields: [
-        VizFieldFull {
-          ref: ref('categories_full', 'category_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'category')
-          format {
-            type: 'text'
-          }
-        }
-      ]
-      settings {
-        show_row_number: true
-      }
-    }
-  }
-  block v4: VizBlock {
-    label: 'ád'
-    viz: DataTable {
-      dataset: new_test
-      fields: [
-        VizFieldFull {
-          ref: ref('categories_full', 'category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'parent_category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'parent_category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'category_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        }
-      ]
-      settings {
-        show_row_number: true
-      }
-    }
-  }
-  block v5: VizBlock {
-    label: 'ád (dup)'
-    viz: DataTable {
-      dataset: new_test
-      fields: [
-        VizFieldFull {
-          ref: ref('categories_full', 'category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'parent_category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'category_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        }
-      ]
-      settings {
-        show_row_number: true
-      }
-    }
-  }
-  block v6: VizBlock {
-    label: 'abc'
-    viz: DataTable {
-      dataset: new_test
-      fields: [
-        VizFieldFull {
-          ref: ref('categories_full', 'category_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'parent_category')
-          format {
-            type: 'text'
-          }
-        }
-      ]
-      settings {
-        show_row_number: true
-      }
-    }
-  }
-  block v7: VizBlock {
-    label: 'ád'
-    viz: DataTable {
-      dataset: new_test
-      fields: [
-        VizFieldFull {
-          ref: ref('categories_full', 'category_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'parent_category')
-          format {
-            type: 'text'
-          }
-        }
-      ]
-      settings {
-        show_row_number: true
-      }
-    }
-  }
-  block v8: VizBlock {
-    label: 'ád'
-    viz: DataTable {
-      dataset: new_test
-      fields: [
-        VizFieldFull {
-          ref: ref('categories_full', 'category_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'category')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('categories_full', 'parent_category')
-          format {
-            type: 'text'
-          }
-        }
-      ]
-      settings {
-        show_row_number: true
       }
     }
   }
@@ -251,25 +49,7 @@ Dashboard unnamed_2 {
     width: 1170
     height: 1560
     block v1 {
-      position: pos(0, 0, 600, 300)
-    }
-    block v2 {
-      position: pos(20, 330, 650, 310)
-    }
-    block v3 {
-      position: pos(610, 10, 400, 300)
-    }
-    block v4 {
-      position: pos(700, 320, 400, 300)
-    }
-    block v5 {
-      position: pos(30, 670, 1070, 360)
-    }
-    block v6 {
-      position: pos(10, 1040, 400, 300)
-    }
-    block v7 {
-      position: pos(420, 1040, 400, 300)
+      position: pos(0, 0, 1170, 500)
     }
   }
 }
