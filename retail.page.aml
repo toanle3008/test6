@@ -1,0 +1,282 @@
+Dashboard untitled_55 {
+  title: 'Retail'
+  description: ''''''
+
+  view: CanvasLayout {
+    label: 'View 1'
+    height: 840
+    grid_size: 20
+    block v1 {
+      position: pos(20, 20, 400, 300)
+      layer: 1
+    }
+    block v2 {
+      position: pos(440, 20, 400, 300)
+      layer: 2
+    }
+    block v3 {
+      position: pos(20, 340, 400, 300)
+      layer: 3
+    }
+    block v4 {
+      position: pos(440, 340, 400, 300)
+      layer: 4
+    }
+    block v5 {
+      position: pos(860, 20, 400, 300)
+      layer: 5
+    }
+  }
+
+  theme: H.themes.classic
+  block v1: VizBlock {
+    label: 'Promotion'
+    viz: DataTable {
+      dataset: retail
+      fields: [
+        VizFieldFull {
+          ref: ref('retail_promotion', 'upc')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_promotion', 'store')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_promotion', 'week')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_promotion', 'feature_desc')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_promotion', 'display_desc')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_promotion', 'geography')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
+  block v2: VizBlock {
+    label: 'Products'
+    viz: DataTable {
+      dataset: retail
+      fields: [
+        VizFieldFull {
+          ref: ref('retail_products', 'upc')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_products', 'product_description')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_products', 'commodity')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_products', 'brand')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_products', 'product_size')
+          format {
+            type: 'text'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
+  block v3: VizBlock {
+    label: 'Stores'
+    viz: DataTable {
+      dataset: retail
+      fields: [
+        VizFieldFull {
+          ref: ref('retail_stores', 'store')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_stores', 'store_zip_code')
+          format {
+            type: 'text'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
+  block v4: VizBlock {
+    label: 'Transactions'
+    viz: DataTable {
+      dataset: retail
+      fields: [
+        VizFieldFull {
+          ref: ref('retail_transactions', 'basket')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transactions', 'geography')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transactions', 'week')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transactions', 'household')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transactions', 'store')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transactions', 'transaction_date')
+          format {
+            type: 'date'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transactions', 'hour')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transactions', 'mins')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transactions', 'hour_mins')
+          format {
+            type: 'text'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
+  block v5: VizBlock {
+    label: 'Transaction Items'
+    viz: DataTable {
+      dataset: retail
+      fields: [
+        VizFieldFull {
+          ref: ref('retail_transaction_items', 'upc')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transaction_items', 'dollar_sales')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transaction_items', 'units')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transaction_items', 'basket')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('retail_transaction_items', 'coupon')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
+}
