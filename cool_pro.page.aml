@@ -6,11 +6,49 @@ Dashboard cool_pro {
     content: @md # Your title goes here
 <font color="#D2D5DF">(Double click to edit)</font>;;
   }
+  block v1: VizBlock {
+    label: 'USers'
+    viz: DataTable {
+      dataset: ecommerce_test
+      fields: [
+        VizFieldFull {
+          ref: ref('ecommerce_users', 'id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_users', 'first_name')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('ecommerce_users', 'last_name')
+          format {
+            type: 'text'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
 
   view: CanvasLayout {
     label: 'View 1'
     height: 840
     grid_size: 20
+    block v1 {
+      position: pos(20, 160, 400, 300)
+      layer: 1
+    }
     block title {
       position: pos(20, 20, 1160, 120)
     }
