@@ -23,7 +23,7 @@ Dashboard untitled_55 {
       layer: 4
     }
     block v5 {
-      position: pos(860, 20, 400, 300)
+      position: pos(860, 20, 320, 300)
       layer: 5
     }
   }
