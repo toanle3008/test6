@@ -15,7 +15,8 @@ Dataset demo_ecommerce {
     ecommerce_countries,
     map_categories,
     user_cohort_retention,
-    dim_dates
+    dim_dates,
+    ecommerce_product_images
   ]
 
 
@@ -28,7 +29,8 @@ Dataset demo_ecommerce {
     relationship(order_master_ecommerce_merchants, true),
     relationship(ecommerce_cities_ecommerce_countries, true),
     relationship(ecommerce_orders_ecommerce_users, true),
-    relationship(order_master_dim_dates, false)
+    relationship(order_master_dim_dates, false),
+    relationship(ecommerce_products.id - ecommerce_product_images.product_id, true),
   ]
 
   // view {}
