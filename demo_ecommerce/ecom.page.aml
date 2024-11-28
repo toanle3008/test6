@@ -307,6 +307,11 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     label: 'Count of Id and Count of Order Id by Name and Parent Category'
     viz: DataTable {
       dataset: demo_ecommerce
+      filter {
+        field: ref('ecommerce_orders', 'status')
+        operator: 'is'
+        value: 'delivered'
+      }
       fields: [
         VizFieldFull {
           ref: ref('ecommerce_countries', 'name')
