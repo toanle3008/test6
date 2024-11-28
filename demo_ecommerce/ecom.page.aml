@@ -396,7 +396,7 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
       position: pos(40, 100, 660, 50)
     }
     block v2 {
-      position: pos(100, 1420, 320, 140)
+      position: pos(1080, 360, 320, 140)
     }
     block v6 {
       position: pos(40, 220, 960, 400)
@@ -419,11 +419,11 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
       layer: -2
     }
     block t53 {
-      position: pos(60, 1400, 400, 340)
+      position: pos(1040, 240, 400, 380)
       layer: -2
     }
     block v10 {
-      position: pos(100, 1580, 320, 140)
+      position: pos(80, 1400, 320, 140)
     }
     block v13 {
       position: pos(980, 1800, 460, 340)
@@ -433,7 +433,7 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
       layer: 1
     }
     block v2_dup_dup {
-      position: pos(1040, 220, 480, 360)
+      position: pos(1100, 1400, 480, 360)
     }
   }
   settings {
