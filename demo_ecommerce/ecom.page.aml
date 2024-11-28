@@ -304,7 +304,7 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     </div>;;
   }
   block v14: VizBlock {
-    label: 'Count of Id and Count of Order Id by Name and Parent Category'
+    label: 'Count of Delivered Order by Parent Category'
     viz: DataTable {
       dataset: demo_ecommerce
       filter {
