@@ -4,8 +4,7 @@
 Dashboard ecom {
   title: 'Ecommerce Dashboard  Witch Demo'
   block hd1: TextBlock {
-    content: @md 
-    <img style="margin-bottom:0 !important;overflow:hidden;" src="https://cdn.holistics.io/logos/holistics-logo-white.svg" alt="demo" width="255">;;
+    content: @md <img style="margin-bottom:0 !important;overflow:hidden;" src="https://cdn.holistics.io/logos/holistics-logo-white.svg" alt="demo" width="300">;;
   }
   block hd2: TextBlock {
     content: @md  <div id="heading">
@@ -115,9 +114,8 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
       }
       settings {
         display_as_donut: true
-        show_total: true
         show_percentage: true
-        data_label_position: 'none'
+        data_label_position: 'outside'
         aggregate_awareness {
           enabled: true
           debug_comments: true
@@ -225,6 +223,7 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
             }
           }
         ]
+        row_limit: 5000
         column_width {
           manual_widths: [
             ColumnWidth {
@@ -433,7 +432,7 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     height: 1000
     grid_size: 20
     block hd1 {
-      position: pos(1200, 20, 320, 140)
+      position: pos(1220, 20, 340, 100)
     }
     block hd2 {
       position: pos(40, 40, 630, 60)
