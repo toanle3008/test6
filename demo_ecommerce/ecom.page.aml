@@ -27,40 +27,6 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
 
 </div>;;
   }
-  block v2: VizBlock {
-    label: 'GMV'
-    viz: MetricKpi {
-      dataset: demo_ecommerce
-      // calculation f_2fb1cc3 {
-      //   label: 'GMT last year'
-      //   formula: @aml order_master.gmv * 0.87;;
-      //   calc_type: 'measure'
-      //   data_type: 'number'
-      // }
-      filter {
-        field: ref('order_master', 'order_created_at')
-        operator: 'matches'
-        value: '2023'
-      }
-      value: VizFieldFull {
-        label: 'Gross Merchandise Value'
-        ref: ref('order_master', 'gmv')
-        format {
-          type: 'number'
-          pattern: '[$$]#,###'
-        }
-      }
-      compare_value: VizPopSettings {
-        field: ref('order_master', 'order_created_at')
-        duration: 1
-        granularity: 'year'
-      }
-    }
-    settings {
-      hide_label: true
-      hide_controls: true
-    }
-  }
   block v2_dup_dup: VizBlock {
     label: 'GVM of the parent category'
     viz: DataTable {
@@ -381,29 +347,26 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
   }
   view: CanvasLayout {
     label: 'View 1'
-    width: 1560
+    width: 1920
     height: 2180
     grid_size: 20
     block t2 {
       position: pos(40, 100, 660, 50)
     }
-    block v2 {
-      position: pos(1080, 360, 320, 140)
-    }
     block v6 {
-      position: pos(40, 220, 960, 400)
+      position: pos(60, 240, 960, 400)
     }
     block v8 {
       position: pos(480, 1400, 640, 340)
     }
     block hd1 {
-      position: pos(1220, 20, 340, 100)
+      position: pos(1560, 60, 340, 100)
     }
     block hd2 {
       position: pos(40, 40, 630, 60)
     }
     block hd3 {
-      position: pos(0, 0, 1560, 200)
+      position: pos(0, 0, 1920, 200)
       layer: -1
     }
     block t52 {
@@ -417,7 +380,7 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
       position: pos(980, 1800, 460, 340)
     }
     block v14 {
-      position: pos(120, 1800, 800, 320)
+      position: pos(1060, 240, 800, 320)
       layer: 1
     }
     block v2_dup_dup {
