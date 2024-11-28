@@ -1169,7 +1169,6 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     }
   }
   settings {
-    timezone: 'America/Los_Angeles'
     cache_duration: 10
   }
 }
