@@ -482,7 +482,7 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
       layer: 1
     }
     block v2_dup_dup {
-      position: pos(920, 280, 580, 220)
+      position: pos(920, 260, 580, 220)
     }
   }
   settings {
