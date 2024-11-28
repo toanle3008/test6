@@ -31,11 +31,6 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     label: 'GVM of the parent category'
     viz: DataTable {
       dataset: demo_ecommerce
-      filter {
-        field: ref('order_master', 'order_created_at')
-        operator: 'matches'
-        value: '2023'
-      }
       fields: [
         VizFieldFull {
           ref: ref('map_categories', 'parent_category')
