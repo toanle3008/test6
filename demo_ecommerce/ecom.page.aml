@@ -135,11 +135,6 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
         calc_type: 'dimension'
         data_type: 'text'
       }
-      filter {
-        field: ref('order_master', 'order_created_at')
-        operator: 'matches'
-        value: '2023'
-      }
       fields: [
         VizFieldFull {
           label: 'Product Name'
@@ -478,7 +473,6 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     }
   }
   settings {
-    timezone: 'America/Los_Angeles'
     cache_duration: 10
   }
 }
