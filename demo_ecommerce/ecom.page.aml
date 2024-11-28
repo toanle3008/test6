@@ -306,76 +306,27 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
   }
   block v13: VizBlock {
     label: 'GMV by Country'
-    viz: BarChart {
+    viz: DataTable {
       dataset: demo_ecommerce
-      legend: VizFieldFull {
-        label: 'Country Name'
-        ref: ref('ecommerce_countries', 'name')
-        format {
-          type: 'text'
-        }
-      }
-      y_axis {
-        settings {
-          axis_max: 12000000
-          show_data_label_by: 'value'
-        }
-        series {
-          field: VizFieldFull {
-            label: '  '
-            ref: ref('order_master', 'gmv')
-            format {
-              type: 'number'
-              pattern: '#,###'
-            }
+      fields: [
+        VizFieldFull {
+          label: 'Country Name'
+          ref: ref('ecommerce_countries', 'name')
+          format {
+            type: 'text'
           }
-          settings {
-            color: '#255DD4'
-            point {
-              value: 'India'
-              color: '#AF7DED'
-            }
-            point {
-              value: 'France'
-              color: '#18A59E'
-            }
-            point {
-              value: 'Germany'
-              color: '#07326C'
-            }
-            point {
-              value: 'Vietnam'
-              color: '#07326C'
-            }
-            point {
-              value: 'Australia'
-              color: '#255DD4'
-            }
-            point {
-              value: 'Indonesia'
-              color: '#A50E43'
-            }
-            point {
-              value: 'Singapore'
-              color: '#F2B602'
-            }
-            point {
-              value: 'South Korea'
-              color: '#E27712'
-            }
-            point {
-              value: 'United States'
-              color: '#18A59E'
-            }
-            point {
-              value: 'United Kingdom'
-              color: '#255DD4'
-            }
+        },
+        VizFieldFull {
+          label: 'GMV'
+          ref: ref('order_master', 'gmv')
+          format {
+            type: 'number'
+            pattern: '#,###'
           }
         }
-      }
+      ]
       settings {
-        legend_label: 'left'
+        show_row_number: true
         aggregate_awareness {
           enabled: true
           debug_comments: true
@@ -475,14 +426,14 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
       position: pos(100, 1580, 320, 140)
     }
     block v13 {
-      position: pos(1120, 1400, 460, 340)
+      position: pos(920, 260, 460, 340)
     }
     block v14 {
       position: pos(60, 260, 800, 320)
       layer: 1
     }
     block v2_dup_dup {
-      position: pos(920, 260, 580, 220)
+      position: pos(1140, 1420, 580, 120)
     }
   }
   settings {
