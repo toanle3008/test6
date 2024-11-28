@@ -114,8 +114,9 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
       }
       settings {
         display_as_donut: true
+        show_total: true
         show_percentage: true
-        data_label_position: 'outside'
+        data_label_position: 'none'
         aggregate_awareness {
           enabled: true
           debug_comments: true
@@ -337,6 +338,7 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     viz: BarChart {
       dataset: demo_ecommerce
       legend: VizFieldFull {
+        label: 'Country Name'
         ref: ref('ecommerce_countries', 'name')
         format {
           type: 'text'
@@ -426,10 +428,48 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
         background: #fafafa;"
     </div>;;
   }
+  block v14: VizBlock {
+    label: 'Count of Id and Count of Order Id by Name and Parent Category'
+    viz: ColumnChart {
+      dataset: demo_ecommerce
+      x_axis: VizFieldFull {
+        ref: ref('ecommerce_countries', 'name')
+        format {
+          type: 'text'
+        }
+      }
+      legend: VizFieldFull {
+        ref: ref('map_categories', 'parent_category')
+        format {
+          type: 'text'
+        }
+      }
+      y_axis {
+        series {
+          field: VizFieldFull {
+            label: ' '
+            ref: ref('order_master', 'order_id')
+            aggregation: 'count'
+            format {
+              type: 'number'
+              pattern: 'inherited'
+            }
+          }
+        }
+      }
+      settings {
+        row_limit: 5000
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
   view: CanvasLayout {
     label: 'View 1'
-    width: 1580
-    height: 1000
+    width: 1600
+    height: 1700
     grid_size: 20
     block hd1 {
       position: pos(1220, 20, 340, 100)
@@ -469,6 +509,10 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     block t53 {
       position: pos(20, 220, 400, 340)
       layer: -2
+    }
+    block v14 {
+      position: pos(20, 1000, 400, 300)
+      layer: 1
     }
   }
   settings {
