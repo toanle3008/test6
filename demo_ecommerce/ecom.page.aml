@@ -342,14 +342,6 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
         background: #fafafa;"
     </div>;;
   }
-  block t53: TextBlock {
-    content: @md <div style="
-        width:100%;
-        height:100%;
-        border-radius: 4px;
-        background: #fafafa;"
-    </div>;;
-  }
   block v14: VizBlock {
     label: 'Count of Id and Count of Order Id by Name and Parent Category'
     viz: DataTable {
@@ -416,10 +408,6 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     }
     block t52 {
       position: pos(480, 1400, 640, 340)
-      layer: -2
-    }
-    block t53 {
-      position: pos(1040, 240, 400, 380)
       layer: -2
     }
     block v10 {
