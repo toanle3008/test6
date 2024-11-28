@@ -800,6 +800,11 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
         operator: 'is'
         value: 'Singapore'
       }
+      filter {
+        field: ref('ecommerce_orders', 'status')
+        operator: 'is'
+        value: 'delivered'
+      }
       fields: [
         VizFieldFull {
           label: 'GMV'
