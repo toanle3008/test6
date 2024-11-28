@@ -170,7 +170,7 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
     }
   }
   block v2_dup_dup: VizBlock {
-    label: 'Top selling product category'
+    label: 'GVM of the parent category'
     viz: PieChart {
       dataset: demo_ecommerce
       filter {
@@ -222,6 +222,9 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
       }
       settings {
         display_as_donut: true
+        show_total: true
+        show_percentage: true
+        data_label_position: 'none'
         aggregate_awareness {
           enabled: true
           debug_comments: true
