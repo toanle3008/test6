@@ -16,6 +16,6 @@ Model retail_stores {
     definition: @sql {{ #SOURCE.store_zip_code }};;
   }
 
-  owner: 'thinh.nt@holistics.io'
+  owner: 'triet.pham@holistics.io'
   table_name: '"retail"."stores"'
 }

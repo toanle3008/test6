@@ -1,0 +1,39 @@
+Model marketing_ops_ap_cleaned_data {
+  type: 'table'
+  label: 'Ops Ap Cleaned Data'
+  description: ''
+  data_source_name: 'demodb'
+  dimension id {
+    label: 'Id'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension product_name_image {
+    label: 'Product Name Image'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.product_name_image }};;
+  }
+  dimension parent_category {
+    label: 'Parent Category'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.parent_category }};;
+  }
+  dimension category {
+    label: 'Category'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.category }};;
+  }
+  dimension gmv {
+    label: 'Gmv'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.gmv }};;
+  }
+
+  owner: 'triet.pham@holistics.io'
+  table_name: '"marketing"."ops_ap_cleaned_data"'
+}

@@ -1,0 +1,57 @@
+Model marketing_mkt_campaigns {
+  type: 'table'
+  label: 'Mkt Campaigns'
+  description: ''
+  data_source_name: 'demodb'
+  dimension id {
+    label: 'Id'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension campaign_start_date {
+    label: 'Campaign Start Date'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.campaign_start_date }};;
+  }
+  dimension campaign_end_date {
+    label: 'Campaign End Date'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.campaign_end_date }};;
+  }
+  dimension campaign_code {
+    label: 'Campaign Code'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.campaign_code }};;
+  }
+  dimension campaign_partner_fk {
+    label: 'Campaign Partner Fk'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.campaign_partner_fk }};;
+  }
+  dimension campaign_cost {
+    label: 'Campaign Cost'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.campaign_cost }};;
+  }
+  dimension campaign_value {
+    label: 'Campaign Value'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.campaign_value }};;
+  }
+  dimension campaign_roi {
+    label: 'Campaign Roi'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.campaign_roi }};;
+  }
+
+  owner: 'triet.pham@holistics.io'
+  table_name: '"marketing"."mkt_campaigns"'
+}

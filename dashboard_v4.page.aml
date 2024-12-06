@@ -398,7 +398,7 @@ Dashboard dashboard_v_4 {
       position: pos(30, 360, 400, 300)
     }
     block v13 {
-      position: pos(790, 0, 400, 300)
+      position: pos(480, 30, 660, 240)
     }
   }
 }

@@ -58,6 +58,6 @@ Model retail_transactions {
     definition: @sql {{ #SOURCE.hour_mins }};;
   }
 
-  owner: 'thinh.nt@holistics.io'
+  owner: 'triet.pham@holistics.io'
   table_name: '"retail"."transactions"'
 }
