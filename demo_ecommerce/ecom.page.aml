@@ -27,96 +27,28 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
 
 </div>;;
   }
-  block v2: VizBlock {
-    label: 'GMV'
-    viz: MetricKpi {
-      dataset: demo_ecommerce
-      // calculation f_2fb1cc3 {
-      //   label: 'GMT last year'
-      //   formula: @aml order_master.gmv * 0.87;;
-      //   calc_type: 'measure'
-      //   data_type: 'number'
-      // }
-      filter {
-        field: ref('order_master', 'order_created_at')
-        operator: 'matches'
-        value: '2023'
-      }
-      value: VizFieldFull {
-        label: 'Gross Merchandise Value'
-        ref: ref('order_master', 'gmv')
-        format {
-          type: 'number'
-          pattern: '[$$]#,###'
-        }
-      }
-      compare_value: VizPopSettings {
-        field: ref('order_master', 'order_created_at')
-        duration: 1
-        granularity: 'year'
-      }
-    }
-    settings {
-      hide_label: true
-      hide_controls: true
-    }
-  }
   block v2_dup_dup: VizBlock {
     label: 'GVM of the parent category'
-    viz: PieChart {
+    viz: DataTable {
       dataset: demo_ecommerce
-      filter {
-        field: ref('order_master', 'order_created_at')
-        operator: 'matches'
-        value: '2023'
-      }
-      legend: VizFieldFull {
-        ref: ref('map_categories', 'parent_category')
-        format {
-          type: 'text'
-        }
-      }
-      series {
-        field: VizFieldFull {
-          label: ' '
+      fields: [
+        VizFieldFull {
+          ref: ref('map_categories', 'parent_category')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          label: 'GMV - Gross Merchandise Value'
           ref: ref('order_master', 'gmv')
           format {
             type: 'number'
             pattern: '[$$]#,###'
           }
         }
-        settings {
-          point {
-            value: 'Clothes'
-            color: '#255DD4'
-          }
-          point {
-            value: 'Groceries'
-            color: '#18A59E'
-          }
-          point {
-            value: 'Skin Care'
-            color: '#F2B602'
-          }
-          point {
-            value: 'Home Furniture'
-            color: '#AF7DED'
-          }
-          point {
-            value: 'Mobiles & Tablets'
-            color: '#A50E43'
-          }
-          point {
-            value: 'Home Entertainment'
-            color: '#07326C'
-          }
-        }
-      }
+      ]
       settings {
-        display_as_donut: true
-        show_total: true
-        show_percentage: true
-        data_label_position: 'none'
+        show_row_number: true
         aggregate_awareness {
           enabled: true
           debug_comments: true
@@ -335,76 +267,27 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
   }
   block v13: VizBlock {
     label: 'GMV by Country'
-    viz: BarChart {
+    viz: DataTable {
       dataset: demo_ecommerce
-      legend: VizFieldFull {
-        label: 'Country Name'
-        ref: ref('ecommerce_countries', 'name')
-        format {
-          type: 'text'
-        }
-      }
-      y_axis {
-        settings {
-          axis_max: 12000000
-          show_data_label_by: 'value'
-        }
-        series {
-          field: VizFieldFull {
-            label: '  '
-            ref: ref('order_master', 'gmv')
-            format {
-              type: 'number'
-              pattern: '#,###'
-            }
+      fields: [
+        VizFieldFull {
+          label: 'Country Name'
+          ref: ref('ecommerce_countries', 'name')
+          format {
+            type: 'text'
           }
-          settings {
-            color: '#255DD4'
-            point {
-              value: 'India'
-              color: '#AF7DED'
-            }
-            point {
-              value: 'France'
-              color: '#18A59E'
-            }
-            point {
-              value: 'Germany'
-              color: '#07326C'
-            }
-            point {
-              value: 'Vietnam'
-              color: '#07326C'
-            }
-            point {
-              value: 'Australia'
-              color: '#255DD4'
-            }
-            point {
-              value: 'Indonesia'
-              color: '#A50E43'
-            }
-            point {
-              value: 'Singapore'
-              color: '#F2B602'
-            }
-            point {
-              value: 'South Korea'
-              color: '#E27712'
-            }
-            point {
-              value: 'United States'
-              color: '#18A59E'
-            }
-            point {
-              value: 'United Kingdom'
-              color: '#255DD4'
-            }
+        },
+        VizFieldFull {
+          label: 'GMV'
+          ref: ref('order_master', 'gmv')
+          format {
+            type: 'number'
+            pattern: '#,###'
           }
         }
-      }
+      ]
       settings {
-        legend_label: 'left'
+        show_row_number: true
         aggregate_awareness {
           enabled: true
           debug_comments: true
@@ -420,44 +303,40 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
         background: #fafafa;"
     </div>;;
   }
-  block t53: TextBlock {
-    content: @md <div style="
-        width:100%;
-        height:100%;
-        border-radius: 4px;
-        background: #fafafa;"
-    </div>;;
-  }
   block v14: VizBlock {
-    label: 'Count of Id and Count of Order Id by Name and Parent Category'
-    viz: ColumnChart {
+    label: 'Count of Delivered Order by Parent Category'
+    viz: DataTable {
       dataset: demo_ecommerce
-      x_axis: VizFieldFull {
-        ref: ref('ecommerce_countries', 'name')
-        format {
-          type: 'text'
-        }
+      filter {
+        field: ref('ecommerce_orders', 'status')
+        operator: 'is'
+        value: 'delivered'
       }
-      legend: VizFieldFull {
-        ref: ref('map_categories', 'parent_category')
-        format {
-          type: 'text'
-        }
-      }
-      y_axis {
-        series {
-          field: VizFieldFull {
-            label: ' '
-            ref: ref('order_master', 'order_id')
-            aggregation: 'count'
-            format {
-              type: 'number'
-              pattern: 'inherited'
-            }
+      fields: [
+        VizFieldFull {
+          ref: ref('ecommerce_countries', 'name')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('map_categories', 'parent_category')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          label: 'Count of Delivered Order Id'
+          ref: ref('order_master', 'order_id')
+          aggregation: 'count'
+          format {
+            type: 'number'
+            pattern: 'inherited'
           }
         }
-      }
+      ]
       settings {
+        show_row_number: true
         row_limit: 5000
         aggregate_awareness {
           enabled: true
@@ -468,51 +347,44 @@ This dashboard tracks the KPIs of all managers for their respective teams. This 
   }
   view: CanvasLayout {
     label: 'View 1'
-    width: 1600
-    height: 1700
+    width: 1920
+    height: 2180
     grid_size: 20
+    block t2 {
+      position: pos(40, 100, 660, 50)
+    }
+    block v6 {
+      position: pos(140, 1760, 960, 400)
+    }
+    block v8 {
+      position: pos(480, 1400, 640, 340)
+    }
     block hd1 {
-      position: pos(1220, 20, 340, 100)
+      position: pos(1560, 60, 340, 100)
     }
     block hd2 {
       position: pos(40, 40, 630, 60)
     }
     block hd3 {
-      position: pos(0, 0, 1560, 200)
+      position: pos(0, 0, 1920, 200)
       layer: -1
     }
-    block t2 {
-      position: pos(40, 100, 660, 50)
-    }
-    block v2 {
-      position: pos(60, 240, 320, 140)
-    }
-    block v2_dup_dup {
-      position: pos(20, 580, 400, 400)
-    }
-    block v6 {
-      position: pos(440, 580, 1100, 400)
-    }
-    block v8 {
-      position: pos(440, 220, 640, 340)
+    block t52 {
+      position: pos(480, 1400, 640, 340)
+      layer: -2
     }
     block v10 {
-      position: pos(60, 400, 320, 140)
+      position: pos(80, 1400, 320, 140)
     }
     block v13 {
-      position: pos(1080, 220, 460, 340)
-    }
-    block t52 {
-      position: pos(440, 220, 640, 340)
-      layer: -2
-    }
-    block t53 {
-      position: pos(20, 220, 400, 340)
-      layer: -2
+      position: pos(980, 1800, 460, 340)
     }
     block v14 {
-      position: pos(20, 1000, 400, 300)
+      position: pos(200, 240, 800, 320)
       layer: 1
+    }
+    block v2_dup_dup {
+      position: pos(200, 600, 800, 360)
     }
   }
   settings {
