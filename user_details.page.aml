@@ -41,14 +41,38 @@ Dashboard user_details {
       }
     }
   }
-  interactions: []
+  block f1: FilterBlock {
+    label: 'Order Created At'
+    type: 'field'
+    source: FieldFilterSource {
+      dataset: official_ecommerce_dataset
+      field: ref('public_persisted_orders', 'created_at')
+    }
+    default {
+      operator: 'matches'
+      value: '$H_NIL$'
+    }
+    settings {
+      drillthrough: Drillthrough {
+        enabled: true
+        sources: [
+          AutoDrillthroughSource {
+          }
+        ]
+      }
+    }
+  }
   view: CanvasLayout {
     label: 'View 1'
     height: 840
     grid_size: 20
     block v1 {
-      position: pos(20, 20, 520, 540)
+      position: pos(20, 140, 520, 540)
       layer: 1
+    }
+    block f1 {
+      position: pos(20, 20, 300, 100)
+      layer: 2
     }
   }
   theme: H.themes.classic
