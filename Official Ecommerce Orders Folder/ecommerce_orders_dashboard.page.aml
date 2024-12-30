@@ -5,7 +5,7 @@ Dashboard official_ecommerce_dashboard {
     label: 'View 1'
     height: 800
     block v1 {
-      position: pos(10, 10, 400, 300)
+      position: pos(10, 10, 600, 370)
       layer: 1
     }
   }
