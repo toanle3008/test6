@@ -4,43 +4,42 @@ Dashboard official_ecommerce_dashboard {
   view: CanvasLayout {
     label: 'View 1'
     height: 800
+    block v1 {
+      position: pos(10, 10, 400, 300)
+      layer: 1
+    }
   }
   block v1: VizBlock {
-    label: 'Table with bizcal dim'
-    viz: DataTable {
+    label: 'Sum of Quantity by Month Created At'
+    viz: ColumnChart {
       dataset: official_ecommerce_dataset
-      calculation f_26fd408 {
-        label: 'BizCal dim'
-        formula: @aml public_persisted_users.gender;;
-        calc_type: 'dimension'
-        data_type: 'text'
+      x_axis: VizFieldFull {
+        ref: ref('public_persisted_orders', 'created_at')
+        transformation: 'datetrunc month'
+        format {
+          type: 'date'
+          pattern: 'LLL yyyy'
+        }
       }
-      fields: [
-        VizFieldFull {
-          ref: ref('public_persisted_users', 'gender')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('public_persisted_order_item', 'quantity')
-          aggregation: 'sum'
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        },
-        VizFieldFull {
-          ref: 'f_26fd408'
-          format {
-            type: 'text'
+      y_axis {
+        series {
+          field: VizFieldFull {
+            ref: ref('public_persisted_order_item', 'quantity')
+            aggregation: 'sum'
+            format {
+              type: 'number'
+              pattern: 'inherited'
+            }
           }
         }
-      ]
+      }
       settings {
-        show_row_number: true
+        row_limit: 5000
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
       }
     }
   }
-
 }
