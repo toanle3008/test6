@@ -1,0 +1,55 @@
+Dashboard user_details {
+  title: 'User Details'
+  block v1: VizBlock {
+    label: 'User Details'
+    viz: DataTable {
+      dataset: official_ecommerce_dataset
+      fields: [
+        VizFieldFull {
+          ref: ref('public_persisted_users', 'id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_users', 'first_name')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_users', 'last_name')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_users', 'gender')
+          format {
+            type: 'text'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        row_limit: 5000
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
+  interactions: []
+  view: CanvasLayout {
+    label: 'View 1'
+    height: 840
+    grid_size: 20
+    block v1 {
+      position: pos(20, 20, 520, 540)
+      layer: 1
+    }
+  }
+  theme: H.themes.classic
+}
