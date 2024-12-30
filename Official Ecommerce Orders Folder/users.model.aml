@@ -54,12 +54,4 @@ Model public_persisted_users {
 
   owner: 'phuong.nl@holistics.io'
   table_name: '"public"."persisted_users"'
-  measure count_distinct_users {
-    label: "Count Distinct Users"
-    type: "text"
-    description: ""
-    hidden: false
-    definition: @sql COUNT (DISTINCT {{ #SOURCE.id }} );;
-    aggregation_type: "custom"
-  }
 }
