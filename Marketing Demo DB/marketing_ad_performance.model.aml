@@ -1,0 +1,189 @@
+Model marketing_ad_performance {
+  type: 'table'
+  label: 'Ad Performance'
+  description: ''
+  data_source_name: 'demodb'
+  dimension placement {
+    label: 'Placement'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.Placement }};;
+  }
+  dimension brand {
+    label: 'Brand'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.Brand }};;
+  }
+  dimension sub_brand {
+    label: 'Sub Brand'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.SubBrand }};;
+  }
+  dimension campaign {
+    label: 'Campaign'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.Campaign }};;
+  }
+  dimension site {
+    label: 'Site'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.Site }};;
+  }
+  dimension additional_targeting {
+    label: 'Additional Targeting'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.AdditionalTargeting }};;
+  }
+  dimension buying_type {
+    label: 'Buying Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.BuyingType }};;
+  }
+  dimension device {
+    label: 'Device'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.Device }};;
+  }
+  dimension ad_size {
+    label: 'Ad Size'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.AdSize }};;
+  }
+  dimension ad_format {
+    label: 'Ad Format'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.AdFormat }};;
+  }
+  dimension format_type {
+    label: 'Format Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.FormatType }};;
+  }
+  dimension month {
+    label: 'Month'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.Month }};;
+  }
+  dimension others {
+    label: 'Others'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.Others }};;
+  }
+  dimension start_date {
+    label: 'Start Date'
+    type: 'date'
+    hidden: false
+    definition: @sql {{ #SOURCE.StartDate }};;
+  }
+  dimension end_date {
+    label: 'End Date'
+    type: 'date'
+    hidden: false
+    definition: @sql {{ #SOURCE.EndDate }};;
+  }
+  dimension rates {
+    label: 'Rates'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.Rates }};;
+  }
+  dimension spending {
+    label: 'Spending'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.Spending }};;
+  }
+  dimension impressions {
+    label: 'Impressions'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.Impressions }};;
+  }
+  dimension unique_impressions {
+    label: 'Unique Impressions'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.UniqueImpressions }};;
+  }
+  dimension landing_conversion {
+    label: 'Landing Conversion'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.Landing_Conversion }};;
+  }
+  dimension post_impressions_conversion {
+    label: 'Post Impressions Conversion'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.PostImpressionsConversion }};;
+  }
+  dimension post_click_conversion {
+    label: 'Post Click Conversion'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.PostClickConversion }};;
+  }
+  dimension completed_view {
+    label: 'Completed View'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.CompletedView }};;
+  }
+  dimension clicks {
+    label: 'Clicks'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.Clicks }};;
+  }
+  dimension unique_clicks {
+    label: 'Unique Clicks'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.UniqueClicks }};;
+  }
+  dimension recordable_impressions {
+    label: 'Recordable Impressions'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.RecordableImpressions }};;
+  }
+  dimension viewable_impressions {
+    label: 'Viewable Impressions'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.ViewableImpressions }};;
+  }
+  dimension viewability_rate {
+    label: 'Viewability Rate'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.ViewabilityRate }};;
+  }
+  dimension viewability {
+    label: 'Viewability'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.Viewability }};;
+  }
+  dimension direct_programmatic {
+    label: 'Direct Programmatic'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.DirectProgrammatic }};;
+  }
+
+  owner: 'triet.pham@holistics.io'
+  table_name: '"marketing"."ad_performance"'
+}

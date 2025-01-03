@@ -1,0 +1,18 @@
+Dataset marketing_demo_db {
+  label: 'Marketing Demo Db'
+  description: ''
+  data_source_name: 'demodb'
+  models: [
+    marketing_mapping,
+    marketing_mkt_campaigns,
+    marketing_campaigns,
+    marketing_ad_performance,
+    marketing_ops_ap_cleaned_data,
+    marketing_funnel,
+    marketing_page_views_agg,
+    marketing_traffic_pageviews
+  ]
+  relationships: [
+  ]
+  owner: 'triet.pham@holistics.io'
+}

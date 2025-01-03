@@ -40,6 +40,6 @@ Model retail_promotion {
     definition: @sql {{ #SOURCE.geography }};;
   }
 
-  owner: 'thinh.nt@holistics.io'
+  owner: 'triet.pham@holistics.io'
   table_name: '"retail"."promotion"'
 }

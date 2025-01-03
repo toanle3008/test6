@@ -1,28 +1,8 @@
 Dashboard new {
   title: 'New'
-  description: ''''''
-  view: CanvasLayout {
-    label: 'View 1'
-    height: 1730
-    block v1 {
-      position: pos(20, 90, 1160, 300)
-    }
-    block v2 {
-      position: pos(20, 410, 1160, 300)
-    }
-    block v3 {
-      position: pos(20, 730, 560, 370)
-    }
-    block v4 {
-      position: pos(600, 730, 570, 390)
-    }
-    block t1 {
-      position: pos(20, 20, 280, 60)
-    }
-  }
   block v1: VizBlock {
     label: 'Sum of Delivery Attempts by Month Created At and Status'
-    viz: ColumnChart {
+    viz: CombinationChart {
       dataset: demo_ecommerce
       x_axis: VizFieldFull {
         ref: ref('ecommerce_orders', 'created_at')
@@ -39,12 +19,27 @@ Dashboard new {
       }
       y_axis {
         series {
+          mark_type: 'area'
           field {
-            ref: ref('ecommerce_orders', 'delivery_attempts')
+            ref: ref('order_master', 'delivery_attempts')
             aggregation: 'sum'
             format {
               type: 'number'
               pattern: 'inherited'
+            }
+          }
+          settings {
+            point {
+              value: 'cancelled'
+              line_interpolation: 'smooth'
+            }
+            point {
+              value: 'delivered'
+              line_interpolation: 'smooth'
+            }
+            point {
+              value: 'refunded'
+              line_interpolation: 'smooth'
             }
           }
         }
@@ -105,6 +100,46 @@ Dashboard new {
       ]
       settings {
         show_row_number: true
+        column_width {
+          manual_widths: [
+            ColumnWidth {
+              key: '__row-number__'
+              width: 50
+            },
+            ColumnWidth {
+              key: 'fields[0]'
+              width: 63
+            },
+            ColumnWidth {
+              key: 'fields[1]'
+              width: 92
+            },
+            ColumnWidth {
+              key: 'fields[2]'
+              width: 155
+            },
+            ColumnWidth {
+              key: 'fields[3]'
+              width: 89
+            },
+            ColumnWidth {
+              key: 'fields[4]'
+              width: 100
+            },
+            ColumnWidth {
+              key: 'fields[5]'
+              width: 111
+            },
+            ColumnWidth {
+              key: 'fields[6]'
+              width: 242
+            },
+            ColumnWidth {
+              key: 'fields[62]'
+              width: 250
+            }
+          ]
+        }
       }
     }
   }
@@ -199,5 +234,23 @@ Dashboard new {
   block t1: TextBlock {
     content: @md # My Dashboard;;
   }
-
+  view: CanvasLayout {
+    label: 'View 1'
+    height: 1730
+    block v1 {
+      position: pos(20, 90, 1160, 300)
+    }
+    block v2 {
+      position: pos(20, 410, 1160, 300)
+    }
+    block v3 {
+      position: pos(20, 730, 560, 370)
+    }
+    block v4 {
+      position: pos(600, 730, 570, 390)
+    }
+    block t1 {
+      position: pos(20, 20, 280, 60)
+    }
+  }
 }

@@ -22,25 +22,19 @@ Dataset ecommerce_test {
 				field full_name
 			}
 			field email
-			field address
+
 		}
 
     // CREATE GROUP "Order Master" CONTAINING TWO MODELS "Orders" & "Dim dates"
 		group order_master {
 			model ecommerce_orders {
-				field order_value
+
 	      field id
-	      field order_status
-				field order_discount
+
+
 	    }
 
-	    model dim_dates {
-	      field year
-	      field month
-	      field day
-	      field week
-	      field quarter
-	    }
+	   
 		}
   }
 }
