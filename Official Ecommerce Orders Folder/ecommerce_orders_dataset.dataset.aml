@@ -29,4 +29,11 @@ Dataset official_ecommerce_dataset {
     relationship(public_persisted_cities.country_code > public_persisted_countries.code, true)
   ]
   owner: 'phuong.nl@holistics.io'
+  metric quantity_per_order {
+    label: "Quantity Per Order"
+    type: "number"
+    hidden: false
+    description: ""
+    definition: @aql sum(public_persisted_order_item.quantity) / count(public_persisted_orders.id);;
+  }
 }

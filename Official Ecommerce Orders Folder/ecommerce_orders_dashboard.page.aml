@@ -46,6 +46,7 @@ Dashboard official_ecommerce_dashboard {
       }
     }
   }
+<<<<<<< HEAD
   block v2: VizBlock {
     label: 'Sum of Quantity by Country'
     viz: ColumnChart {
@@ -77,4 +78,6 @@ Dashboard official_ecommerce_dashboard {
       }
     }
   }
+=======
+>>>>>>> origin/master
 }
