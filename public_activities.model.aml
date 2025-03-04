@@ -9,12 +9,6 @@ Model public_activities {
     hidden: false
     definition: @sql {{ #SOURCE.id }};;
   }
-  dimension trackable_id {
-    label: 'Trackable Id'
-    type: 'number'
-    hidden: false
-    definition: @sql {{ #SOURCE.trackable_id }};;
-  }
   dimension trackable_type {
     label: 'Trackable Type'
     type: 'text'
@@ -97,4 +91,3 @@ Model public_activities {
   owner: 'duong.ht@holistics.io'
   table_name: "\"public\".\"activities\""
 }
-
