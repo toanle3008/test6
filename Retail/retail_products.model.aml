@@ -3,12 +3,6 @@ Model retail_products {
   label: 'Products'
   description: ''
   data_source_name: 'demodb'
-  dimension upc {
-    label: 'Upc'
-    type: 'text'
-    hidden: false
-    definition: @sql {{ #SOURCE.upc }};;
-  }
   dimension product_description {
     label: 'Product Description'
     type: 'text'
