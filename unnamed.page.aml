@@ -5,12 +5,6 @@ Dashboard new_reporting_dac {
     label: 'View 1'
     width: 1240
     height: 1680
-    block v1 {
-      position: pos(10, 10, 400, 300)
-    }
-    block v2 {
-      position: pos(420, 10, 400, 300)
-    }
     block v3 {
       position: pos(830, 10, 400, 300)
     }
@@ -25,87 +19,6 @@ Dashboard new_reporting_dac {
     }
     block v7 {
       position: pos(10, 1360, 400, 300)
-    }
-  }
-  block v1: VizBlock {
-    label: 'avc'
-    viz: DataTable {
-      dataset: _123
-      fields: [
-        VizFieldFull {
-          ref: ref('ecommerce_merchants', 'name')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('ecommerce_merchants', 'id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        },
-        VizFieldFull {
-          ref: ref('ecommerce_merchants', 'name')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('ecommerce_merchants', 'city_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        },
-        VizFieldFull {
-          ref: ref('ecommerce_merchants', 'created_at')
-          format {
-            type: 'date'
-          }
-        }
-      ]
-      settings {
-        show_row_number: true
-      }
-    }
-  }
-  block v2: VizBlock {
-    label: 'ac'
-    viz: DataTable {
-      dataset: _123
-      fields: [
-        VizFieldFull {
-          ref: ref('ecommerce_merchants', 'name')
-          format {
-            type: 'text'
-          }
-        },
-        VizFieldFull {
-          ref: ref('ecommerce_merchants', 'city_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        },
-        VizFieldFull {
-          ref: ref('ecommerce_merchants', 'id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        },
-        VizFieldFull {
-          ref: ref('ecommerce_merchants', 'admin_id')
-          format {
-            type: 'number'
-            pattern: 'inherited'
-          }
-        }
-      ]
-      settings {
-        show_row_number: true
-      }
     }
   }
   block v3: VizBlock {
