@@ -1,11 +1,6 @@
 Dashboard cool_pro {
   title: 'Cool Pro'
   description: ''''''
-
-  block title: TextBlock {
-    content: @md # Your title goes here
-<font color="#D2D5DF">(Double click to edit)</font>;;
-  }
   block v1: VizBlock {
     label: 'USers'
     viz: DataTable {
@@ -48,9 +43,6 @@ Dashboard cool_pro {
     block v1 {
       position: pos(20, 160, 400, 300)
       layer: 1
-    }
-    block title {
-      position: pos(20, 20, 1160, 120)
     }
   }
 

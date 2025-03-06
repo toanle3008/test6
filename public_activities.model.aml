@@ -3,18 +3,6 @@ Model public_activities {
   label: "Activities"
   description: ''
   data_source_name: "development_2"
-  dimension trackable_type {
-    label: 'Trackable Type'
-    type: 'text'
-    hidden: false
-    definition: @sql {{ #SOURCE.trackable_type }};;
-  }
-  dimension owner_id {
-    label: 'Owner Id'
-    type: 'number'
-    hidden: false
-    definition: @sql {{ #SOURCE.owner_id }};;
-  }
   dimension owner_type {
     label: 'Owner Type'
     type: 'text'
