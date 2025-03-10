@@ -15,12 +15,6 @@ Model public_activities {
     hidden: false
     definition: @sql {{ #SOURCE.key }};;
   }
-  dimension parameters {
-    label: 'Parameters'
-    type: 'text'
-    hidden: false
-    definition: @sql {{ #SOURCE.parameters }};;
-  }
   dimension recipient_id {
     label: 'Recipient Id'
     type: 'number'
