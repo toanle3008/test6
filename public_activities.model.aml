@@ -8,7 +8,7 @@ Model public_activities {
     type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.owner_type }};;
-  }
+  } 
   dimension key {
     label: 'Key'
     type: 'text'
