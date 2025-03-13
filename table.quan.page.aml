@@ -97,7 +97,7 @@ Dashboard table {
       dataset: official_ecommerce_dataset
       theme {
         table {
-          general {
+          border {
             border_visibility {
               outer: true
               vertical: true
@@ -148,7 +148,7 @@ Dashboard table {
           enabled: true
           debug_comments: true
         }
-        frozen_columns: 2
+        frozen_columns: 0
       }
     }
   }
