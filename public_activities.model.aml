@@ -3,6 +3,12 @@ Model public_activities {
   label: "Activities"
   description: ''
   data_source_name: "development_2"
+  dimension owner_type {
+    label: 'Owner Type'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.owner_type }};;
+  }  
   dimension key {
     label: 'Key'
     type: 'text'
