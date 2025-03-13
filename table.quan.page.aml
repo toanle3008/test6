@@ -97,7 +97,7 @@ Dashboard table {
       dataset: official_ecommerce_dataset
       theme {
         table {
-          border {
+          general {
             border_visibility {
               outer: true
               vertical: true
