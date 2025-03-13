@@ -31,10 +31,10 @@ Dashboard table {
             cell_padding: 1
             border_visibility {
               outer: true
+              vertical: true
               horizontal: true
               header: true
               row_header: true
-              vertical: true
             }
           }
         }
@@ -100,10 +100,10 @@ Dashboard table {
           general {
             border_visibility {
               outer: true
+              vertical: true
               horizontal: true
               header: true
               row_header: true
-              vertical: true
             }
           }
         }
@@ -148,7 +148,7 @@ Dashboard table {
           enabled: true
           debug_comments: true
         }
-        frozen_columns: 0
+        frozen_columns: 2
       }
     }
   }
