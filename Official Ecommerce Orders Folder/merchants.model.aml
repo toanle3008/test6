@@ -1,0 +1,38 @@
+Model public_persisted_merchants {
+  type: 'table'
+  label: 'Merchants'
+  description: ''
+  data_source_name: 'development_2'
+  dimension id {
+    label: 'Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.id }};;
+  }
+  dimension name {
+    label: 'Merchant'
+    type: 'text'
+    definition: @sql {{ #SOURCE.name }};;
+  }
+  dimension created_at {
+    label: 'Created At'
+    type: 'datetime'
+    hidden: false
+    definition: @sql {{ #SOURCE.created_at }};;
+  }
+  dimension admin_id {
+    label: 'Admin Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.admin_id }};;
+  }
+  dimension city_id {
+    label: 'City Id'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.city_id }};;
+  }
+
+  owner: 'phuong.nl@holistics.io'
+  table_name: '"public"."persisted_merchants"'
+}

@@ -1,0 +1,27 @@
+Model marketing_mapping {
+  type: 'table'
+  label: 'Mapping'
+  description: ''
+  data_source_name: 'demodb'
+  dimension pc_brand {
+    label: 'Pc Brand'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.pc_brand }};;
+  }
+  dimension total_sold {
+    label: 'Total Sold'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.total_sold }};;
+  }
+  dimension period {
+    label: 'Period'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.period }};;
+  }
+
+  owner: 'triet.pham@holistics.io'
+  table_name: '"marketing"."mapping"'
+}

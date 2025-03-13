@@ -1,0 +1,33 @@
+Model marketing_traffic_pageviews {
+  type: 'table'
+  label: 'Traffic Pageviews'
+  description: ''
+  data_source_name: 'demodb'
+  dimension date {
+    label: 'Date'
+    type: 'date'
+    hidden: false
+    definition: @sql {{ #SOURCE.date }};;
+  }
+  dimension traffic_source {
+    label: 'Traffic Source'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.traffic_source }};;
+  }
+  dimension pageviews {
+    label: 'Pageviews'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.pageviews }};;
+  }
+  dimension total_page_views {
+    label: 'Total Page Views'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.total_page_views }};;
+  }
+
+  owner: 'triet.pham@holistics.io'
+  table_name: '"marketing"."traffic_pageviews"'
+}

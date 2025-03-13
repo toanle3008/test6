@@ -1,0 +1,79 @@
+Dashboard user_details {
+  title: 'User Details'
+  block v1: VizBlock {
+    label: 'User Details'
+    viz: DataTable {
+      dataset: official_ecommerce_dataset
+      fields: [
+        VizFieldFull {
+          ref: ref('public_persisted_users', 'id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_users', 'first_name')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_users', 'last_name')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_users', 'gender')
+          format {
+            type: 'text'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        row_limit: 5000
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
+  block f1: FilterBlock {
+    label: 'Order Created At'
+    type: 'field'
+    source: FieldFilterSource {
+      dataset: official_ecommerce_dataset
+      field: ref('public_persisted_orders', 'created_at')
+    }
+    default {
+      operator: 'matches'
+      value: '$H_NIL$'
+    }
+    settings {
+      drillthrough: Drillthrough {
+        enabled: true
+        sources: [
+          AutoDrillthroughSource {
+          }
+        ]
+      }
+    }
+  }
+  view: CanvasLayout {
+    label: 'View 1'
+    height: 840
+    grid_size: 20
+    block v1 {
+      position: pos(20, 140, 520, 540)
+      layer: 1
+    }
+    block f1 {
+      position: pos(20, 20, 300, 100)
+      layer: 2
+    }
+  }
+  theme: H.themes.classic
+}

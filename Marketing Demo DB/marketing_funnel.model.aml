@@ -1,0 +1,21 @@
+Model marketing_funnel {
+  type: 'table'
+  label: 'Funnel'
+  description: ''
+  data_source_name: 'demodb'
+  dimension activity {
+    label: 'Activity'
+    type: 'text'
+    hidden: false
+    definition: @sql {{ #SOURCE.activity }};;
+  }
+  dimension values {
+    label: 'Values'
+    type: 'number'
+    hidden: false
+    definition: @sql {{ #SOURCE.values }};;
+  }
+
+  owner: 'triet.pham@holistics.io'
+  table_name: '"marketing"."funnel"'
+}

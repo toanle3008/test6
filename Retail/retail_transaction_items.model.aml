@@ -34,6 +34,6 @@ Model retail_transaction_items {
     definition: @sql {{ #SOURCE.coupon }};;
   }
 
-  owner: 'thinh.nt@holistics.io'
+  owner: 'triet.pham@holistics.io'
   table_name: '"retail"."transaction_items"'
 }

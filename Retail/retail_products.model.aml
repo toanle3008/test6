@@ -3,12 +3,6 @@ Model retail_products {
   label: 'Products'
   description: ''
   data_source_name: 'demodb'
-  dimension upc {
-    label: "UPC"
-    type: "text"
-    definition: @sql {{ #SOURCE.upc }};;
-    description: "Universal Product Code"
-  }
   dimension product_description {
     label: 'Product Description'
     type: 'text'
@@ -34,6 +28,6 @@ Model retail_products {
     definition: @sql {{ #SOURCE.product_size }};;
   }
 
-  owner: 'thinh.nt@holistics.io'
+  owner: 'triet.pham@holistics.io'
   table_name: '"retail"."products"'
 }

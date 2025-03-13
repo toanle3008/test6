@@ -3,47 +3,17 @@ Model public_activities {
   label: "Activities"
   description: ''
   data_source_name: "development_2"
-  dimension id {
-    label: 'Id'
-    type: 'number'
-    hidden: false
-    definition: @sql {{ #SOURCE.id }};;
-  }
-  dimension trackable_id {
-    label: 'Trackable Id'
-    type: 'number'
-    hidden: false
-    definition: @sql {{ #SOURCE.trackable_id }};;
-  }
-  dimension trackable_type {
-    label: 'Trackable Type'
-    type: 'text'
-    hidden: false
-    definition: @sql {{ #SOURCE.trackable_type }};;
-  }
-  dimension owner_id {
-    label: 'Owner Id'
-    type: 'number'
-    hidden: false
-    definition: @sql {{ #SOURCE.owner_id }};;
-  }
   dimension owner_type {
     label: 'Owner Type'
     type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.owner_type }};;
-  }
+  }  
   dimension key {
     label: 'Key'
     type: 'text'
     hidden: false
     definition: @sql {{ #SOURCE.key }};;
-  }
-  dimension parameters {
-    label: 'Parameters'
-    type: 'text'
-    hidden: false
-    definition: @sql {{ #SOURCE.parameters }};;
   }
   dimension recipient_id {
     label: 'Recipient Id'
@@ -97,4 +67,3 @@ Model public_activities {
   owner: 'duong.ht@holistics.io'
   table_name: "\"public\".\"activities\""
 }
-
