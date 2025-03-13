@@ -13,6 +13,15 @@ Dataset _123 {
     ecommerce_products
   ]
   relationships: [
+    relationship(ecommerce_products.category_id > ecommerce_categories.id, true)
+    ,
+    relationship(ecommerce_users.city_id > ecommerce_cities.id, true)
+    ,
+    relationship(ecommerce_merchants.city_id > ecommerce_cities.id, true)
+    ,
+    relationship(ecommerce_order_items.product_id > ecommerce_products.id, true)
+    ,
+    relationship(ecommerce_products.merchant_id > ecommerce_merchants.id, true)
   ]
   owner: 'thinh.nt@holistics.io'
 }
