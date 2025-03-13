@@ -30,16 +30,16 @@ Dataset demo_ecommerce {
     relationship(order_master_dim_dates, false)
   ]
 
-  View {
-    model order_master
-    model ecommerce_orders,
-    model ecommerce_users,
-    model ecommerce_products,
-    model ecommerce_merchants,
-    model ecommerce_cities,
-    model ecommerce_countries,
-    model map_categories,
-    model user_cohort_retention,
-    model dim_dates
-  }
+  // View {
+  //   model order_master
+  //   model ecommerce_orders,
+  //   model ecommerce_users,
+  //   model ecommerce_products,
+  //   model ecommerce_merchants,
+  //   model ecommerce_cities,
+  //   model ecommerce_countries,
+  //   model map_categories,
+  //   model user_cohort_retention,
+  //   model dim_dates
+  // }
 }
