@@ -1,0 +1,152 @@
+Dashboard table {
+  title: 'Table'
+  description: ''''''
+
+  view: CanvasLayout {
+    label: 'View 1'
+    height: 840
+    grid_size: 20
+    mobile {
+      mode: 'auto'
+    }
+    block v1 {
+      position: pos(20, 20, 680, 300)
+      layer: 1
+    }
+    block v2 {
+      position: pos(720, 20, 400, 300)
+      layer: 2
+    }
+  }
+  block v1: VizBlock {
+    label: 'table'
+    viz: DataTable {
+      dataset: official_ecommerce_dataset
+      theme {
+        table {
+          general {
+            bg_color: '#0D1778FF'
+            font_size: 10
+            cell_padding: 1
+            border_visibility {
+              outer: true
+              vertical: true
+              row_header: true
+            }
+          }
+        }
+      }
+      fields: [
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'created_at')
+          format {
+            type: 'datetime'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'status')
+          format {
+            type: 'text'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'delivery_attempts')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'discount')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'user_id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        }
+      ]
+      settings {
+        show_row_number: true
+        row_limit: 5000
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+      }
+    }
+  }
+  block v2: VizBlock {
+    label: 'pivot'
+    viz: PivotTable {
+      dataset: official_ecommerce_dataset
+      theme {
+        table {
+          general {
+            border_visibility {
+              outer: true
+              vertical: true
+              horizontal: true
+              header: true
+              row_header: true
+            }
+          }
+        }
+      }
+      rows: [
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'created_at')
+          transformation: 'datetrunc month'
+          format {
+            type: 'date'
+            pattern: 'LLL yyyy'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'status')
+          format {
+            type: 'text'
+          }
+        }
+      ]
+      columns: [
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'discount')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        },
+        VizFieldFull {
+          ref: ref('public_persisted_orders', 'id')
+          format {
+            type: 'number'
+            pattern: 'inherited'
+          }
+        }
+      ]
+      settings {
+        show_row_total: true
+        show_column_total: true
+        row_limit: 5000
+        aggregate_awareness {
+          enabled: true
+          debug_comments: true
+        }
+        frozen_columns: 0
+      }
+    }
+  }
+}
