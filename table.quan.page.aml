@@ -18,7 +18,6 @@ Dashboard table {
       layer: 2
     }
   }
-  theme: H.themes.midnight
   block v1: VizBlock {
     label: 'table'
     viz: DataTable {
@@ -26,14 +25,12 @@ Dashboard table {
       theme {
         table {
           general {
-            bg_color: '#FCB8B8'
+            bg_color: '#0D1778FF'
             font_size: 10
             cell_padding: 1
             border_visibility {
               outer: true
               vertical: true
-              horizontal: true
-              header: true
               row_header: true
             }
           }
