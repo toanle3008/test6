@@ -1,26 +1,26 @@
 Dashboard new_reporting_dac {
-  title: 'New reporting DAC'
+  title: 'tables tables tables'
   description: ''''''
   view: CanvasLayout {
     label: 'View 1'
     width: 1240
-    height: 1680
+    height: 2050
     block v3 {
-      position: pos(670, 40, 540, 300)
+      position: pos(670, 40, 540, 310)
     }
     block v4 {
-      position: pos(20, 20, 600, 330)
+      position: pos(20, 40, 600, 310)
     }
     block v5 {
-      position: pos(30, 410, 510, 480)
+      position: pos(30, 410, 1190, 480)
       layer: 1
     }
     block v6 {
-      position: pos(30, 1040, 980, 460)
+      position: pos(30, 1260, 1170, 460)
       layer: 1
     }
     block v7 {
-      position: pos(630, 410, 590, 370)
+      position: pos(30, 960, 1170, 270)
       layer: 2
     }
   }
@@ -31,7 +31,10 @@ Dashboard new_reporting_dac {
       theme {
         table {
           general {
-            bg_color: '#D3DFF6'
+            border_visibility {
+              outer: true
+              row_header: true
+            }
           }
         }
       }
@@ -72,6 +75,9 @@ Dashboard new_reporting_dac {
         }
       }
     }
+    settings {
+      hide_label: true
+    }
   }
   block v4: VizBlock {
     label: 'ádc'
@@ -80,11 +86,15 @@ Dashboard new_reporting_dac {
       theme {
         table {
           general {
-            bg_color: '#FCC870'
+            bg_color: '#CAE5FFFF'
+            font_size: 16
+            cell_padding: DetailedSpacing {
+              top: 4
+              left: 8
+              bottom: 4
+              right: 8
+            }
             border_visibility {
-              outer: true
-              horizontal: true
-              header: true
               row_header: true
             }
           }
@@ -134,6 +144,9 @@ Dashboard new_reporting_dac {
         }
       }
     }
+    settings {
+      hide_label: true
+    }
   }
   block v5: VizBlock {
     label: 'pivot'
@@ -143,13 +156,25 @@ Dashboard new_reporting_dac {
         table {
           general {
             bg_color: '#F2ECF2'
-            font_size: 12
+            font_size: 16
+            cell_padding: DetailedSpacing {
+              top: 4
+              left: 8
+              bottom: 4
+              right: 8
+            }
+            // banding_color: "#F2ECF2"
+            // border_color: '#AC5BAC'
+
             border_visibility {
               outer: true
               vertical: true
               row_header: true
             }
           }
+          // column_header {
+          //   bg_color: 'transparent'
+          // }
         }
       }
       rows: [
@@ -276,21 +301,27 @@ Dashboard new_reporting_dac {
       theme {
         table {
           general {
-            bg_color: '#FB9494'
+            bg_color: '#07326C'
+            border_visibility {
+              outer: true
+              header: true
+              row_header: true
+            }
           }
         }
       }
       date_field: VizFieldFull {
         ref: ref('ecommerce_merchants', 'created_at')
-        transformation: 'datetrunc month'
+        transformation: 'datetrunc year'
         format {
           type: 'date'
-          pattern: 'LLL yyyy'
+          pattern: 'yyyy'
         }
       }
       rows: [
         MetricSeries {
           field: VizFieldFull {
+            label: 'Total Users'
             ref: ref('ecommerce_users', 'id')
             aggregation: 'count'
             format {
@@ -298,10 +329,14 @@ Dashboard new_reporting_dac {
               pattern: 'inherited'
             }
           }
+          settings {
+            mark_type: 'line'
+          }
         },
         MetricSeries {
           field: VizFieldFull {
-            ref: ref('ecommerce_products', 'id')
+            label: 'Total Merchants'
+            ref: ref('ecommerce_merchants', 'id')
             aggregation: 'count'
             format {
               type: 'number'
@@ -309,10 +344,24 @@ Dashboard new_reporting_dac {
             }
           }
         },
+        MetricSeries {
+          field: VizFieldFull {
+            label: 'Total Products'
+            ref: ref('ecommerce_products', 'id')
+            aggregation: 'count'
+            format {
+              type: 'number'
+              pattern: 'inherited'
+            }
+          }
+          settings {
+            mark_type: 'line'
+          }
+        },
         MetricHeading {
           label: 'Heading'
           settings {
-            background_color: '#E27712'
+            background_color: '#255DD4'
             text_color: '#F8DDC4'
           }
         }
