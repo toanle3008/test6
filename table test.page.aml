@@ -282,7 +282,6 @@ Dashboard new_reporting_dac {
         }
       ]
       settings {
-        show_row_total: true
         show_column_total: true
         row_limit: 5000
         aggregate_awareness {
@@ -301,7 +300,7 @@ Dashboard new_reporting_dac {
           },
           ColumnStyle {
             key: 'count_id'
-            width: 93
+            width: 104
           }
         ]
       }
