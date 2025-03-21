@@ -94,17 +94,7 @@ Dashboard new_reporting_dac {
       theme {
         table {
           general {
-            bg_color: '#CAE5FFFF'
-            font_size: 16
-            cell_padding: DetailedSpacing {
-              top: 4
-              left: 8
-              bottom: 4
-              right: 8
-            }
-            border_visibility {
-              row_header: true
-            }
+            bg_color: '#E9EFFB'
           }
         }
       }
@@ -135,6 +125,7 @@ Dashboard new_reporting_dac {
             type: 'number'
             pattern: 'inherited'
           }
+          uname: 'custom_delivered_orders_count'
         },
         VizFieldFull {
           ref: ref('ecommerce_orders', 'cancelled_orders_count')
@@ -150,6 +141,12 @@ Dashboard new_reporting_dac {
           enabled: true
           debug_comments: true
         }
+        column_styles: [
+          ColumnStyle {
+            key: 'custom_delivered_orders_count'
+            width: 77
+          }
+        ]
       }
     }
     settings {
@@ -317,7 +314,7 @@ Dashboard new_reporting_dac {
       theme {
         table {
           general {
-            bg_color: '#07326C'
+            bg_color: '#FEDBDB'
             border_visibility {
               outer: true
               header: true
