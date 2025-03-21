@@ -289,7 +289,7 @@ Dashboard new_reporting_dac {
           enabled: true
           debug_comments: true
         }
-        frozen_columns: 0
+        frozen_columns: 2
         column_styles: [
           ColumnStyle {
             key: 'ecommerce_categories_name'
@@ -305,6 +305,9 @@ Dashboard new_reporting_dac {
           }
         ]
       }
+    }
+    settings {
+      hide_label: true
     }
   }
   block v7: VizBlock {
